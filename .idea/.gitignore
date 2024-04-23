@@ -8,3 +8,4 @@
 /dataSources.local.xml
 #Database local storage ignored files
 /data/
+/application.lock.db
