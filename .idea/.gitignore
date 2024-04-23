@@ -51,3 +51,7 @@ out/
 ### H2 database ###
 /data
 /data/application.lock.db
+
+
+data/
+.gradle/
