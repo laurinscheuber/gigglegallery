@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 
 @Entity
-public class Friend  implements SelectOption {
+public class Users implements SelectOption {
     @Id
     private int id;
     @NotEmpty
