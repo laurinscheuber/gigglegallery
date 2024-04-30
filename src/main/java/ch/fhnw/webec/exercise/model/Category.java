@@ -1,9 +1,11 @@
 package ch.fhnw.webec.exercise.model;
 
 import ch.fhnw.webec.exercise.form.SelectOption;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 
+@Entity
 public class Category implements SelectOption {
     @Id
     private int id;
