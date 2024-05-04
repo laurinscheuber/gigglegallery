@@ -11,11 +11,15 @@
 /application.lock.db
 
 HELP.md
-.gradle*
-.build*
+
+#Gradle build folders
+.gradle/
+build
 !gradle/wrapper/gradle-wrapper.jar
-    !**/src/main/**/build/
-    !**/src/test/**/build/
+
+
+ !**/src/main/**/build/
+ !**/src/test/**/build/
 
 ### STS ###
 .apt_generated
@@ -25,6 +29,8 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
+
+#Binary directory
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
@@ -34,6 +40,8 @@ bin/
 *.iws
 *.iml
 *.ipr
+
+#Output folder
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -45,13 +53,8 @@ out/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
-
 ### H2 database ###
 /data
 /data/application.lock.db
 
-
-data/
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ch.fhnw.webec.exercise.ApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-30T14:18:34" hostname="DESKTOP-1H65S7L" time="0.655">
+<testsuite name="ch.fhnw.webec.exercise.ApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-04T07:42:44" hostname="DESKTOP-1H65S7L" time="0.822">
   <properties/>
-  <testcase name="contextLoads()" classname="ch.fhnw.webec.exercise.ApplicationTests" time="0.655"/>
-  <system-out><![CDATA[16:18:30.792 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ch.fhnw.webec.exercise.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:18:30.896 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ch.fhnw.webec.exercise.Application for test class ch.fhnw.webec.exercise.ApplicationTests
+  <testcase name="contextLoads()" classname="ch.fhnw.webec.exercise.ApplicationTests" time="0.822"/>
+  <system-out><![CDATA[09:42:38.899 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ch.fhnw.webec.exercise.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:42:39.016 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ch.fhnw.webec.exercise.Application for test class ch.fhnw.webec.exercise.ApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,22 +13,22 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.3)
 
-2024-04-30T16:18:31.333+02:00  INFO 31400 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Starting ApplicationTests using Java 21.0.2 with PID 31400 (started by tamir in C:\Users\tamir\OneDrive - FHNW\Semester 04_23\webeC\GiggleGallery)
-2024-04-30T16:18:31.334+02:00  INFO 31400 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : No active profile set, falling back to 1 default profile: "default"
-2024-04-30T16:18:31.993+02:00  INFO 31400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-30T16:18:32.015+02:00  INFO 31400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
-2024-04-30T16:18:32.425+02:00  INFO 31400 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-30T16:18:32.506+02:00  INFO 31400 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-04-30T16:18:32.546+02:00  INFO 31400 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-04-30T16:18:32.805+02:00  INFO 31400 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-30T16:18:32.834+02:00  INFO 31400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-30T16:18:33.165+02:00  INFO 31400 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/application user=
-2024-04-30T16:18:33.167+02:00  INFO 31400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-30T16:18:34.006+02:00  INFO 31400 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-30T16:18:34.047+02:00  INFO 31400 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-30T16:18:34.209+02:00  WARN 31400 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-30T16:18:34.249+02:00  INFO 31400 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-04-30T16:18:34.775+02:00  INFO 31400 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Started ApplicationTests in 3.713 seconds (process running for 4.834)
+2024-05-04T09:42:39.482+02:00  INFO 21624 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Starting ApplicationTests using Java 21.0.1 with PID 21624 (started by tamir in C:\Users\tamir\OneDrive - FHNW\Semester 04_23\webeC\GiggleGallery)
+2024-05-04T09:42:39.483+02:00  INFO 21624 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T09:42:40.233+02:00  INFO 21624 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T09:42:40.256+02:00  INFO 21624 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2024-05-04T09:42:40.761+02:00  INFO 21624 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T09:42:40.893+02:00  INFO 21624 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T09:42:40.963+02:00  INFO 21624 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T09:42:41.389+02:00  INFO 21624 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T09:42:41.428+02:00  INFO 21624 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T09:42:41.597+02:00  INFO 21624 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/application user=
+2024-05-04T09:42:41.603+02:00  INFO 21624 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T09:42:43.224+02:00  INFO 21624 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T09:42:43.284+02:00  INFO 21624 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T09:42:43.534+02:00  WARN 21624 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-04T09:42:43.597+02:00  INFO 21624 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-05-04T09:42:44.551+02:00  INFO 21624 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Started ApplicationTests in 5.351 seconds (process running for 6.568)
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\tamir\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.12\be4984cb6fd1ef1d11f218a648889dfda44b8a15\byte-buddy-agent-1.14.12.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
