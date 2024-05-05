@@ -37,11 +37,11 @@ test:
       - .gradle
 
 deploy:
-  stage: deploy
-  script:
-    - heroku login
-    - heroku git:remote -a giggle-gallery
-    - git push heroku main
-    - heroku run java -jar path/to/flyway.jar migrate -url=jdbc:h2:file:./data/application
-    - heroku ps:scale web=1
-  environment: production
+    image: ruby:latest
+    stage: deploy
+    script:
+        - gem install dpl
+        - dpl --provider=heroku --app=$giggle-gallery --api_key=$HRKU-9a25e4e2-2939-4dee-812c-83ca3fca76dd
+    only:
+       - main
+
