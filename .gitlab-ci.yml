@@ -41,6 +41,6 @@ deploy:
   stage: deploy
   script:
     - gem install dpl
-    - dpl --provider=heroku --app=$giggle-gallery --api_key=$HRKU-9a25e4e2-2939-4dee-812c-83ca3fca76dd
+    - dpl --provider=heroku --app=$giggle-gallery --api_key=$HRKU-daf39001-820c-40b1-afcb-227b4001040e
   only:
     - main
