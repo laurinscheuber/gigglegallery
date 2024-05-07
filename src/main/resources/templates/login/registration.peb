@@ -1,0 +1,17 @@
+{% extends "layout/default" %}
+
+{% import "form/input" %}
+{% import "form/csrf" %}
+{% import "form/submit" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+    <h1>Registration</h1>
+    <form method="post" class="form">
+        {{ input("user", "Username", "username", "text", user.username, _context) }}
+        {{ input("user", "Password", "password", "password", '', _context) }}
+        {{ csrf(_csrf) }}
+        {{ submit("Register") }}
+    </form>
+{% endblock %}

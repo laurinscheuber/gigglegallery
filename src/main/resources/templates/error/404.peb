@@ -1,0 +1,8 @@
+{% extends "layout/default" %}
+
+{% block title %}Error 404{% endblock %}
+
+{% block content %}
+    <h1 class="heading heading--size-1">Error 404</h1>
+    <p>Page not found!</p>
+{% endblock %}

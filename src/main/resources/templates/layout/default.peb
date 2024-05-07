@@ -1,0 +1,61 @@
+    {% import "form/csrf" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Markus Mächler">
+    <meta name="description" content="Booklist project for the module webeC">
+
+    <title>{% block title %}Booklist{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="{{ href('/js/booklist.js') }}" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <a href="{{ href('/') }}" class="header__logo">
+                <span class="header__icon material-icons">menu_book</span>
+                <span class="header__text">Booklist</span>
+            </a>
+            <form action="/" method="get" class="header__search">
+                {# @pebvariable name="search" type="java.lang.String" #}
+                <input class="header__input" type="text" name="search" value="{{ search }}" placeholder="Search for the best books" />
+                <input class="header__submit" type="submit" value="Search" />
+            </form>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__container container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__container container">
+            <span class="footer__copyright">&copy; FHNW &vert; Web Engineering</span>
+            <nav>
+                <ul class="footer__menu">
+                    {% if request.userPrincipal is not null %}
+                        <li class="footer__menu-item">
+                            <form action="{{ href('/logout') }}" method="post" class="footer__logout-form">
+                                {{ csrf(_csrf) }}
+                                <input type="submit" value="Logout" class="link link--footer footer__logout-form-submit">
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="footer__menu-item"><a href="{{ href('/login') }}" class="link link--footer">Login</a></li>
+                    {% endif %}
+                    <li class="footer__menu-item"><a href="{{ href('/about') }}" class="link link--footer">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
