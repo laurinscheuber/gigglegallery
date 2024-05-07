@@ -39,8 +39,12 @@ test:
 deploy:
   image: ruby:latest
   stage: deploy
+  variables:
+    HEROKU_APP_NAME: "giggle-gallery"
+    HEROKU_PRODUCTION_KEY: "HRKU-daf39001-820c-40b1-afcb-227b4001040e"
+
   script:
     - gem install dpl
-    - dpl --provider=heroku --app=$giggle-gallery --api_key="$HRKU-daf39001-820c-40b1-afcb-227b4001040e"
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
   only:
     - main
