@@ -15,7 +15,7 @@ import java.util.Set;
 @Entity
 public class Users implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @NotEmpty
     @Column(nullable = false, unique = true)
@@ -25,13 +25,13 @@ public class Users implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @NotEmpty
+
     private String firstName;
 
-    @NotEmpty
+
     private String lastName;
 
-    @NotEmpty
+
     private int age;
 
     @ElementCollection(fetch = FetchType.EAGER)
