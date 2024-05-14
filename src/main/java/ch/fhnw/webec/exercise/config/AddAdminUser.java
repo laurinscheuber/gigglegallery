@@ -1,4 +1,4 @@
-package ch.fhnw.webec.exercise.service;
+package ch.fhnw.webec.exercise.config;
 
 import ch.fhnw.webec.exercise.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
