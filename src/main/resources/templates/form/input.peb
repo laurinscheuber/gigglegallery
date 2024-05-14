@@ -1,0 +1,29 @@
+{# @pebvariable name="form" type="java.lang.String" #}
+{# @pebvariable name="label" type="java.lang.String" #}
+{# @pebvariable name="name" type="java.lang.String" #}
+{# @pebvariable name="type" type="java.lang.String" #}
+{# @pebvariable name="value" type="java.lang.String" #}
+
+{% macro input(form, label, name, type, value, _context) %}
+    {% set fieldId = form + '-' + name %}
+
+    <div class="form__field form__field-{{ fieldId }}">
+        <label class="form__label" for="{{ fieldId }}">{{ label }}</label>
+
+        {% if type == "textarea" %}
+            <textarea class="form__textarea {% if hasFieldErrors(form, name) %}form__textarea--error{% endif %}"
+                      id="{{ fieldId }}"
+                      name="{{ name }}" >{{ value }}</textarea>
+        {% else %}
+            <input class="form__input {% if hasFieldErrors(form, name) %}form__input--error{% endif %}"
+                   id="{{ fieldId }}"
+                   type="{{ type }}"
+                   name="{{ name }}"
+                   value="{{ value }}" />
+        {% endif %}
+
+    {% for error in getFieldErrors(form, name) %}
+            <p class="form__error">{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endmacro %}

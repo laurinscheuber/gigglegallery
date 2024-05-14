@@ -1,0 +1,32 @@
+{# @pebvariable name="form" type="java.lang.String" #}
+{# @pebvariable name="label" type="java.lang.String" #}
+{# @pebvariable name="name" type="java.lang.String" #}
+{# @pebvariable name="options" type="java.util.Collection<ch.fhnw.webec.booklist.form.SelectOption>" #}
+{# @pebvariable name="selectedOptions" type="java.util.Collection<ch.fhnw.webec.booklist.form.SelectOption>" #}
+{# @pebvariable name="multiple" type="java.lang.Boolean" #}
+
+{% macro select(form, label, name, options, selectedOptions, multiple, _context) %}
+    {% set fieldId = form + '-' + name %}
+
+    <div class="form__field">
+        <label class="form__label" for="{{ fieldId }}">{{ label }}</label>
+        <select class="form__select{% if hasFieldErrors(form, name) %} form__select--error{% endif %}{% if multiple %} form__select--multiple{% endif %}"
+                id="{{ fieldId }}"
+                name="{{ name }}" {% if multiple %}multiple{% endif %}>
+            {% for option in options %}
+    {% if option.value %}
+                    <option value="{{ option.value }}" {% if selectedOptions contains option %}selected{% endif %}>
+                        {{ option.label }}
+                    </option>
+                {% else %}
+                    <option value="{{ option }}" {% if selectedOptions contains option %}selected{% endif %}>
+                        {{ option }}
+                    </option>
+                {% endif %}
+{% endfor %}
+        </select>
+        {% for error in getFieldErrors(form, name) %}
+            <p class="form__error">{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endmacro %}
