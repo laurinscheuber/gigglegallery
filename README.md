@@ -4,15 +4,28 @@
 
 ### Team members
 
-TODO: Write the names of the team members here
+** Unser Team: ** Tamira Leber & Laurin Scheuber
 
 ### Description
 
-TODO: Write around a 5 sentence description of your idea and the entities you intend to create
+** Unsere Idee: ** Ein digitales Freundschaftsbuch, die "GiggleGallery". Jeder Nutzer loggt sich ein und erstellt seine eigene Seite des Freundschaftsbuches. Dies hat nebst normalen Informationen wie Namen und Geburtsdatum auch lustige Kategorien wie Guilty Pleasure Playlist, Binge-Watching-Beichte, Zeitreise-Ziel, Superhelden-Spitzname etc. Dann kann man Personen als Freunde anfragen. Wenn diese die Anfrage annehmen, erscheint ihre Seite im eigenen Freundschaftsbuch.
+
+### Entitäten
+
+- User (Profilepicture, bio, name, ...)
+- FriendRequest (Sender, Receiver)
+- Category (category name)
+
+### Beziehungen
+
+- User (n) -- friends -- (m) User
+- User (1) -- (n) FriendRequest (n) -- (1) User
+- FriendRequest (n) -- (1) Category
 
 ### Individual
 
-TODO: Write the two individual focus areas you implement here
+- API Anbindung (Giphy)
+- User Login
 
 ## Installation and run instructions
 
