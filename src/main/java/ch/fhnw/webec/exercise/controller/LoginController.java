@@ -36,6 +36,11 @@ public class LoginController {
         }
     }
 
+    @RequestMapping(path = "/registration", method = RequestMethod.GET)
+    public String register() {
+        return "login/registration";
+    }
+
     @RequestMapping(path = "/registration", method = RequestMethod.POST)
     public String register(@Valid Users user, BindingResult bindingResult, Model model) {
         if (this.userService.usernameAlreadyExists(user.getUsername())) {

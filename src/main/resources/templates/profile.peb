@@ -1,0 +1,16 @@
+    {% extends "layout/default" %}
+
+        {% import "form/input" %}
+        {% import "form/select" %}
+        {% import "form/csrf" %}
+        {% import "form/submit" %}
+
+    {% block content %}
+    <form method="post" class="form">
+        {{ input("book", "Title", "title", "text", book.title, _context) }}
+    {{ input("book", "Description", "description", "textarea", book.description, _context) }}
+    {{ select("book", "Topics", "topics", topics, book.topics, true, _context) }}
+    {{ csrf(_csrf) }}
+    {{ submit("Save") }}
+    </form>
+{% endblock %}

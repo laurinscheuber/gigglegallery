@@ -23,7 +23,7 @@
         <div class="header__container container">
             <a href="{{ href('/') }}" class="header__logo">
                 <span class="header__icon material-icons">menu_book</span>
-                <span class="header__text">Booklist</span>
+                <span class="header__text">Giggle Gallery</span>
             </a>
             <form action="/" method="get" class="header__search">
                 {# @pebvariable name="search" type="java.lang.String" #}

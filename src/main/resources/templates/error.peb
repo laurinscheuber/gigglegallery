@@ -1,0 +1,8 @@
+    {% extends "layout/default" %}
+
+        {% block title %}Oops, an error occurred!{% endblock %}
+
+    {% block content %}
+    <h1 class="heading heading--size-1">Oops, an error occurred!</h1>
+    <p>We are sorry, an unexpected error occurred.</p>
+{% endblock %}
