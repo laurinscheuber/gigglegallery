@@ -1,7 +1,5 @@
 package ch.fhnw.webec.exercise.model;
 
-import ch.fhnw.webec.exercise.form.SelectOption;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,9 +8,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "USERS")
 public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +24,9 @@ public class Users implements UserDetails {
     @NotEmpty
     @Column(nullable = false)
     private String password;
+
+    @OneToMany
+    private List<Friendship> friendshipList;
 
 
     private String firstName;

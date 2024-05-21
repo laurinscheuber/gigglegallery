@@ -1,18 +1,20 @@
 package ch.fhnw.webec.exercise.model;
 
 import ch.fhnw.webec.exercise.form.SelectOption;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
+@Table(name = "FRIENDSHIP")
 public class Friendship implements SelectOption {
-
 
     @Id
     private int id;
 
-
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     @Override
     public String getValue() {
@@ -30,5 +32,13 @@ public class Friendship implements SelectOption {
 
     public int getId() {
         return id;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
     }
 }
