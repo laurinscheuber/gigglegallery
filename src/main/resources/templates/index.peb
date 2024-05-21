@@ -10,6 +10,8 @@
     </head>
     <body>
         <h1>{{ "Welcome to Giggle Gallery" }}</h1>
-
+         <input type="text" id="query-input" placeholder="Search for GIFs" />
+    <button id="search-button">Search</button>
+    <div id="gifs-container"></div>
     </body>
 </html>

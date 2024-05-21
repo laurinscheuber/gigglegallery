@@ -10,10 +10,8 @@ import java.util.Map;
 @Service
 public class GiphyService {
     private final RestTemplate restTemplate = new RestTemplate();
-
-
     private final String apiKey = "ZoTL3Jdvlm5MyAn34B3nMDMw5BPBoZJh";
-    private final String baseUrl = "api.giphy.com/v1/gifs";
+    private final String baseUrl = "https://api.giphy.com/v1/gifs";
 
 
     public Map<String, Object> searchGiphy(String query, int limit){
@@ -32,5 +30,7 @@ public class GiphyService {
                 .toUriString();
         return restTemplate.getForObject(url, Map.class);
     }
+
+
 
 }
