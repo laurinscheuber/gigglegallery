@@ -10,37 +10,47 @@
 </head>
 <body>
     <header>
-        <h1>Digital Friendship Book</h1>
+        <h1>Digital Friendship Book - GiggleGallery</h1>
     </header>
     <div class="container">
         <div class="dashboard">
             <div class="book-section">
-                <div class="page own-page">
-                    <div class="header">
-                        <h2>{{ userName }}</h2>
-                        <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
+                <div class="book-pages">
+                    <div class="page own-page">
+                        <div class="header">
+                            <h2>{{ userName }}</h2>
+                            <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
+                        </div>
+                        <div class="details">
+                            <p><strong>Name:</strong> {{ userName }}</p>
+                            <p><strong>Geburtsdatum:</strong> {{ birthdate }}</p>
+                            <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}</p>
+                            <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}</p>
+                            <p><strong>Zeitreise-Ziel:</strong> {{ timeTravelDestination }}</p>
+                            <p><strong>Superhelden-Spitzname:</strong> {{ superheroNickname }}</p>
+                            <p><strong>Favorite GIF:</strong></p>
+                            <img src="{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
+                        </div>
                     </div>
-                    <div class="details">
-                        <p><strong>Hobbies:</strong> {{ hobbies }}</p>
-                        <p><strong>Favorite Joke:</strong> {{ favoriteJoke }}</p>
-                        <!-- Add more fields as needed -->
-                        <p><strong>Favorite GIF:</strong></p>
-                        <img src="{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
+                    <div class="page friend-page">
+                        <div class="header">
+                            <h2>{{ friendName }}</h2>
+                            <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
+                        </div>
+                        <div class="details">
+                            <p><strong>Name:</strong> {{ friendName }}</p>
+                            <p><strong>Geburtsdatum:</strong> {{ friendBirthdate }}</p>
+                            <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}</p>
+                            <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}</p>
+                            <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}</p>
+                            <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}</p>
+                            <p><strong>Favorite GIF:</strong></p>
+                            <img src="{{ friendFavoriteGif }}" alt="Friend's Favorite GIF" class="favorite-gif">
+                        </div>
                     </div>
                 </div>
-                <div class="page friend-page">
-                    <div class="header">
-                        <h2>{{ friendName }}</h2>
-                        <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
-                    </div>
-                    <div class="details">
-                        <p><strong>Hobbies:</strong> {{ friendHobbies }}</p>
-                        <p><strong>Favorite Joke:</strong> {{ friendFavoriteJoke }}</p>
-                        <!-- Add more fields as needed -->
-                        <p><strong>Favorite GIF:</strong></p>
-                        <img src="{{ friendFavoriteGif }}" alt="Friend's Favorite GIF" class="favorite-gif">
-                    </div>
-                </div>
+                <button class="flip-button" id="prev-page">Previous</button>
+                <button class="flip-button" id="next-page">Next</button>
             </div>
             <div class="friends-section">
                 <h2>Friends</h2>
@@ -56,7 +66,37 @@
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Digital Friendship Book</p>
+        <p>&copy; 2024 GiggleGallery</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentPage = 0;
+            const pages = document.querySelectorAll(".book-pages .page");
+            const prevButton = document.getElementById("prev-page");
+            const nextButton = document.getElementById("next-page");
+
+            function updatePageVisibility() {
+                pages.forEach((page, index) => {
+                    page.style.display = index === currentPage ? "block" : "none";
+                });
+            }
+
+            prevButton.addEventListener("click", function() {
+                if (currentPage > 0) {
+                    currentPage--;
+                    updatePageVisibility();
+                }
+            });
+
+            nextButton.addEventListener("click", function() {
+                if (currentPage < pages.length - 1) {
+                    currentPage++;
+                    updatePageVisibility();
+                }
+            });
+
+            updatePageVisibility();
+        });
+    </script>
 </body>
 </html>
