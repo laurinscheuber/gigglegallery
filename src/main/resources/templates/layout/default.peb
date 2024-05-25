@@ -16,7 +16,7 @@
     <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-    <script src="{{ href('/js/booklist.js') }}" defer></script>
+    <script src="{{ href('/js/index.js') }}" defer></script>
 </head>
 <body>
     <header class="header">

@@ -1,6 +1,7 @@
 {# @pebvariable name="title" type="java.lang.String" #}
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,3 +101,19 @@
     </script>
 </body>
 </html>
+=======
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title }}</title>
+        <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
+        <script src="{{ href('/js/index.js') }}" defer></script>
+    </head>
+    <body>
+        <h1>{{ "Welcome to Giggle Gallery" }}</h1>
+         <input type="text" id="query-input" placeholder="Search for GIFs" />
+    <button id="search-button">Search</button>
+    <div id="gifs-container"></div>
+    </body>
+</html>
+>>>>>>> 21-giphy-integration-via-api

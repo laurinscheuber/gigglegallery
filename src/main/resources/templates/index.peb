@@ -65,6 +65,11 @@
             </div>
         </div>
     </div>
+    <div className="giphy">
+         <input type="text" id="query-input" placeholder="Search for GIFs" />
+    <button id="search-button">Search</button>
+    <div id="gifs-container"></div>
+ </div>
     <footer>
         <p>&copy; 2024 GiggleGallery</p>
     </footer>
@@ -98,5 +103,7 @@
             updatePageVisibility();
         });
     </script>
-</body>
+
+
+
 </html>
