@@ -16,7 +16,7 @@ public class GiphyController {
 
     private final GiphyService giphyService;
 
-    @Autowired
+
     public GiphyController(GiphyService giphyService) {
         this.giphyService = giphyService;
     }
