@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
-    <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ href('/css/styles.css') }}" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1>Login</h1>
-    </header>
+<div class="login-box">
     <main class="form-container">
         <form action="/login" method="post">
+            <h2>Login</h2>
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -22,10 +21,13 @@
             </div>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="/register">Register here</a>.</p>
+        <div class="registration-request">
+            <p>Don't have an account? <a href="/register">Register here</a>.</p>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 GiggleGallery</p>
-    </footer>
+</div>
+<footer>
+    <p>&copy; 2024 GiggleGallery</p>
+</footer>
 </body>
 </html>
