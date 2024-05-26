@@ -14,7 +14,7 @@ import java.util.Map;
 @RestController
 public class GiphyController {
 
-    private GiphyService giphyService;
+    private final GiphyService giphyService;
 
     @Autowired
     public GiphyController(GiphyService giphyService) {
@@ -42,4 +42,5 @@ public class GiphyController {
             return ResponseEntity.status(500).body((Map) errorResponse);
         }
     }
+
 }

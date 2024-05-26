@@ -1,119 +1,80 @@
 {# @pebvariable name="title" type="java.lang.String" #}
-<!DOCTYPE html>
-<html lang="en">
-<<<<<<< HEAD
+<body lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }}</title>
-    <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ href('/css/styles.css') }}" rel="stylesheet"/>
     <script src="{{ href('/js/index.js') }}" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Digital Friendship Book - GiggleGallery</h1>
-    </header>
-    <div class="container">
-        <div class="dashboard">
-            <div class="book-section">
-                <div class="book-pages">
-                    <div class="page own-page">
-                        <div class="header">
-                            <h2>{{ userName }}</h2>
-                            <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
-                        </div>
-                        <div class="details">
-                            <p><strong>Name:</strong> {{ userName }}</p>
-                            <p><strong>Geburtsdatum:</strong> {{ birthdate }}</p>
-                            <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}</p>
-                            <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}</p>
-                            <p><strong>Zeitreise-Ziel:</strong> {{ timeTravelDestination }}</p>
-                            <p><strong>Superhelden-Spitzname:</strong> {{ superheroNickname }}</p>
-                            <p><strong>Favorite GIF:</strong></p>
-                            <img src="{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
-                        </div>
+<header>
+    <h1>Digital Friendship Book - GiggleGallery</h1>
+</header>
+<div class="container">
+    <div class="dashboard">
+        <div class="book-section">
+            <div class="book-pages">
+                <div class="page own-page">
+                    <div class="header">
+                        <h2>{{ userName }}</h2>
+                        <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
                     </div>
-                    <div class="page friend-page">
-                        <div class="header">
-                            <h2>{{ friendName }}</h2>
-                            <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
-                        </div>
-                        <div class="details">
-                            <p><strong>Name:</strong> {{ friendName }}</p>
-                            <p><strong>Geburtsdatum:</strong> {{ friendBirthdate }}</p>
-                            <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}</p>
-                            <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}</p>
-                            <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}</p>
-                            <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}</p>
-                            <p><strong>Favorite GIF:</strong></p>
-                            <img src="{{ friendFavoriteGif }}" alt="Friend's Favorite GIF" class="favorite-gif">
-                        </div>
+                    <div class="details">
+                        <p><strong>Name:</strong> {{ userName }}</p>
+                        <p><strong>Geburtsdatum:</strong> {{ birthdate }}</p>
+                        <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}</p>
+                        <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}</p>
+                        <p><strong>Zeitreise-Ziel:</strong> {{ timeTravelDestination }}</p>
+                        <p><strong>Superhelden-Spitzname:</strong> {{ superheroNickname }}</p>
+                        <p><strong>Favorite GIF:</strong></p>
+                        <img src="{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
                     </div>
                 </div>
-                <button class="flip-button" id="prev-page">Previous</button>
-                <button class="flip-button" id="next-page">Next</button>
-            </div>
-            <div class="friends-section">
-                <h2>Friends</h2>
-                <div class="friends-list">
-                    <!-- Example friend entry -->
-                    <div class="friend">
-                        <p>{{ friendName }}</p>
+                <div class="page friend-page">
+                    <div class="header">
+                        <h2>{{ friendName }}</h2>
+                        <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
                     </div>
-                    <!-- Add more friend entries as needed -->
+                    <div class="details">
+                        <p><strong>Name:</strong> {{ friendName }}</p>
+                        <p><strong>Geburtsdatum:</strong> {{ friendBirthdate }}</p>
+                        <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}</p>
+                        <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}</p>
+                        <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}</p>
+                        <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}</p>
+                        <p><strong>Favorite GIF:</strong></p>
+                        <img src="{{ friendFavoriteGif }}" alt="Friend's Favorite GIF" class="favorite-gif">
+                    </div>
                 </div>
-                <button class="add-friend-button">Add Friend</button>
             </div>
+            <button class="flip-button" id="prev-page">Previous</button>
+            <button class="flip-button" id="next-page">Next</button>
+        </div>
+        <div class="friends-section">
+            <h2>Friends</h2>
+            <div id="friends-list">
+                <!-- Example friend entry -->
+                <div class="friend">
+                    <p>{{ friendName }}</p>
+                </div>
+                <!-- Add more friend entries as needed -->
+            </div>
+            <button class="add-friend-button">Add Friend</button>
+            <button id="add-gif">Add Favorite GIF</button>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2024 GiggleGallery</p>
-    </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let currentPage = 0;
-            const pages = document.querySelectorAll(".book-pages .page");
-            const prevButton = document.getElementById("prev-page");
-            const nextButton = document.getElementById("next-page");
-
-            function updatePageVisibility() {
-                pages.forEach((page, index) => {
-                    page.style.display = index === currentPage ? "block" : "none";
-                });
-            }
-
-            prevButton.addEventListener("click", function() {
-                if (currentPage > 0) {
-                    currentPage--;
-                    updatePageVisibility();
-                }
-            });
-
-            nextButton.addEventListener("click", function() {
-                if (currentPage < pages.length - 1) {
-                    currentPage++;
-                    updatePageVisibility();
-                }
-            });
-
-            updatePageVisibility();
-        });
-    </script>
+    <div class="modal">
+        <div class="modal-content">
+            <span class = "close-button" id="close-button">&times;</span>
+            <h2> Search your GIF</h2>
+            <input type="text" id="query-input" placeholder="Search for GIFs"/>
+            <button  id="search-button">Search</button>
+            <div id="gifs-container"></div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 GiggleGallery</p>
+</footer>
 </body>
-</html>
-=======
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title }}</title>
-        <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
-        <script src="{{ href('/js/index.js') }}" defer></script>
-    </head>
-    <body>
-        <h1>{{ "Welcome to Giggle Gallery" }}</h1>
-         <input type="text" id="query-input" placeholder="Search for GIFs" />
-    <button id="search-button">Search</button>
-    <div id="gifs-container"></div>
-    </body>
-</html>
->>>>>>> 21-giphy-integration-via-api
