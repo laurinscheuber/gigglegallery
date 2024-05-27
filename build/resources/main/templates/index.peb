@@ -1,5 +1,5 @@
 {# @pebvariable name="title" type="java.lang.String" #}
-<body lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,4 +83,8 @@
             <footer>
                 <p>&copy; 2024 GiggleGallery</p>
             </footer>
+        </section>
+    </div>
+</div>
 </body>
+</html>
