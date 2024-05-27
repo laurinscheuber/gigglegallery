@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
-    <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
+    <title>Registration</title>
+    <link href="{{ href('/css/login.css') }}" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1>Register</h1>
-    </header>
+<div class="login-box">
     <main class="form-container">
         <form action="/register" method="post">
+            <h1>Registration</h1>
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -36,12 +35,15 @@
                 <label for="birthdate">Birthdate:</label>
                 <input type="date" id="birthdate" name="birthdate" required>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Create Account</button>
         </form>
-        <p>Already have an account? <a href="/login">Login here</a>.</p>
+        <div class="registration-request">
+            <p>Already have an account? <a href="/login">Login here</a>.</p>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 GiggleGallery</p>
-    </footer>
+</div>
+<footer>
+    <p>&copy; 2024 GiggleGallery</p>
+</footer>
 </body>
 </html>
