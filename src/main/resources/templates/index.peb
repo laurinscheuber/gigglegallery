@@ -21,10 +21,9 @@
                                     <img src="{# @pebvariable name="userImage" type="" #}{{ userImage }}" alt="Profile Picture" class="profile-picture">
                                 </div>
                                 <div class="details">
-                                    <p><strong>Geburtsdatum:</strong> {# @pebvariable name="birthdate" type="" #}{{ birthdate }}</p>
                                     <p><strong>Guilty Pleasure Playlist:</strong> {# @pebvariable name="guiltyPleasurePlaylist" type="" #}{{ guiltyPleasurePlaylist }}</p>
                                     <p><strong>Binge-Watching-Beichte:</strong> {# @pebvariable name="bingeWatchingConfession" type="" #}{{ bingeWatchingConfession }}</p>
-                                    <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="timeTravelDestination" type="" #}{{ timeTravelDestination }}</p>
+                                    <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="getZeitreiseZiel" type="" #}{{ timeTravelDestination }}</p>
                                     <p><strong>Superhelden-Spitzname:</strong> {# @pebvariable name="superheroNickname" type="" #}{{ superheroNickname }}</p>
                                     <p><strong>Favorite GIF:</strong></p>
                                     <img src="{# @pebvariable name="favoriteGif" type="" #}{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
@@ -36,8 +35,6 @@
                                     <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
                                 </div>
                                 <div class="details">
-                                    <p><strong>Name:</strong> {{ friendName }}</p>
-                                    <p><strong>Geburtsdatum:</strong> {{ friendBirthdate }}</p>
                                     <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}</p>
                                     <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}</p>
                                     <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}</p>

@@ -25,10 +25,9 @@ public class Users implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Friendship> friendshipList;
 
-    private int age;
 
     private String guiltyPleasurePlaylist;
 
@@ -58,10 +57,6 @@ public class Users implements UserDetails {
 
     public int getId() {
         return id;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public String getGuiltyPleasurePlaylist() {
@@ -138,7 +133,4 @@ public class Users implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-
-
 }

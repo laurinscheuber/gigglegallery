@@ -10,20 +10,25 @@ import java.util.List;
 public class Friendship implements SelectOption {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Users user;
 
+    @ManyToOne
+    @JoinColumn(name = "friend_id")
+    private Users friend;
+
     @Override
     public String getValue() {
-        return null;
+        return String.valueOf(id);
     }
 
     @Override
     public String getLabel() {
-        return null;
+        return friend.getUsername();
     }
 
     public void setId(int id) {
@@ -41,4 +46,7 @@ public class Friendship implements SelectOption {
     public void setUser(Users user) {
         this.user = user;
     }
+    public Users getFriend(){return friend;}
+
+    public void setFriend(Users friend) {this.friend = friend;}
 }
