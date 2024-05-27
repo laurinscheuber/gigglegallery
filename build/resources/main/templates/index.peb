@@ -1,13 +1,23 @@
 {# @pebvariable name="title" type="java.lang.String" #}
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+=======
+
+
+    {% extends "layout/default" %}
+
+    {% block content %}
+
+>>>>>>> origin/main
     <title>{{ title }}</title>
     <link href="{{ href('/css/styles.css') }}" rel="stylesheet"/>
     <script src="{{ href('/js/index.js') }}" defer></script>
 </head>
 <body>
+<<<<<<< HEAD
 <div id="wrapper">
     <div id="container">
 
@@ -57,6 +67,16 @@
                             <button id="add-gif">Add Favorite GIF</button>
                         </div>
 
+=======
+<div class="container">
+    <div class="dashboard">
+        <div class="book-section">
+            <div class="book-pages">
+                <div class="page own-page">
+                    <div class="header">
+                        <h2>{{ userName }}</h2>
+                        <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
+>>>>>>> origin/main
                     </div>
                     <div class="friends-section">
                         <h2>Friends</h2>
@@ -87,4 +107,10 @@
     </div>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+
+
+{% endblock %}
+>>>>>>> origin/main
