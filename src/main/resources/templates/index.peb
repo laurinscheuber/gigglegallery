@@ -8,8 +8,6 @@
     <div id="container">
 
         <section class="open-book">
-
-            <h1>Digital Friendship Book - GiggleGallery</h1>
             <h2 class="chapter-title">"{# @pebvariable name="userName" type="" #}{{ userName }}"</h2>
             <div class="container">
                 <div class="dashboard">
@@ -18,13 +16,12 @@
                             <div class="page own-page">
                                 <div class="book-header">
                                     <h2>{# @pebvariable name="friendName" type="" #}{{ friendName }}</h2>
-                                    <img src="{# @pebvariable name="userImage" type="" #}{{ userImage }}" alt="Profile Picture" class="profile-picture">
                                 </div>
                                 <div class="details">
-                                    <p><strong>Guilty Pleasure Playlist:</strong> {# @pebvariable name="guiltyPleasurePlaylist" type="" #}{{ guiltyPleasurePlaylist }}</p>
-                                    <p><strong>Binge-Watching-Beichte:</strong> {# @pebvariable name="bingeWatchingConfession" type="" #}{{ bingeWatchingConfession }}</p>
-                                    <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="getZeitreiseZiel" type="" #}{{ timeTravelDestination }}</p>
-                                    <p><strong>Superhelden-Spitzname:</strong> {# @pebvariable name="superheroNickname" type="" #}{{ superheroNickname }}</p>
+                                    <p><strong>Guilty Pleasure Playlist:</strong> {# @pebvariable name="guiltyPleasurePlaylist" type="" #}{{ guiltyPleasurePlaylist }}Guilty Pleasure Playlist</p>
+                                    <p><strong>Binge-Watching-Beichte:</strong> {# @pebvariable name="bingeWatchingConfession" type="" #}{{ bingeWatchingConfession }}Binge Watching Confession</p>
+                                    <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="getZeitreiseZiel" type="" #}{{ timeTravelDestination }}Time Travel Destination</p>
+                                    <p><strong>Superhelden-Spitzname:</strong> {# @pebvariable name="superheroNickname" type="" #}{{ superheroNickname }}Superhero Nickname</p>
                                     <p><strong>Favorite GIF:</strong></p>
                                     <img src="{# @pebvariable name="favoriteGif" type="" #}{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
                                 </div>
@@ -32,13 +29,12 @@
                             <div class="page friend-page">
                                 <div class="-book-header">
                                     <h2>{{ friendName }}</h2>
-                                    <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
                                 </div>
                                 <div class="details">
-                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}</p>
-                                    <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}</p>
-                                    <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}</p>
-                                    <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}</p>
+                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}Guilty Pleasure</p>
+                                    <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}Binge Watch Beichte</p>
+                                    <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}Zeitreise Ziel</p>
+                                    <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}Superhero Nickname</p>
                                     <p><strong>Favorite GIF:</strong></p>
                                     <img src="{{ friendFavoriteGif }}" alt="Friend's Favorite GIF" class="favorite-gif">
                                 </div>
