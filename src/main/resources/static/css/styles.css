@@ -309,89 +309,6 @@ body {
         z-index: 1;
     }
 
-    /* Header/Footer */
-    .open-book header:before,
-    .open-book header:after,
-    .open-book footer:before,
-    .open-book footer:after {
-        background: #fff;
-        border-radius: 25%;
-        content: '';
-        height: 2em;
-        position: absolute;
-        z-index: -1;
-        width: calc(50% + 2em);
-    }
-
-    .open-book header:before,
-    .open-book footer:before,
-    .open-book footer:after {
-        border-top-left-radius: 0;
-    }
-
-    .open-book header:after,
-    .open-book footer:before,
-    .open-book footer:after {
-        border-top-right-radius: 0;
-    }
-
-    .open-book header:before,
-    .open-book header:after,
-    .open-book footer:after {
-        border-bottom-right-radius: 0;
-    }
-
-    .open-book header:before,
-    .open-book header:after,
-    .open-book footer:before {
-        border-bottom-left-radius: 0;
-    }
-
-    .open-book header:before,
-    .open-book header:after {
-        top: -2.65em;
-    }
-
-    .open-book header:before,
-    .open-book footer:before {
-        right: 50%;
-    }
-
-    .open-book header:before {
-        transform: rotate(-2deg);
-    }
-
-    .open-book header:after,
-    .open-book footer:after {
-        left: 50%;
-    }
-
-    .open-book header:after {
-        transform: rotate(2deg);
-    }
-
-    .open-book footer:before,
-    .open-book footer:after {
-        bottom: -2.65em;
-    }
-
-    .open-book footer:before {
-        transform: rotate(2deg);
-    }
-
-    .open-book footer:after {
-        transform: rotate(-2deg);
-    }
-
-    .open-book header > *:last-child,
-    .open-book footer > *:last-child {
-        text-align: right;
-    }
-
-    .open-book footer #page-numbers {
-        display: block;
-    }
-
     /* Chapter Title */
     .open-book .chapter-title {
         font-size: 3em;
@@ -413,7 +330,7 @@ body {
     }
 
 }
-
+/*GIF modal*/
 .modal {
     display: none;
     position: fixed;
@@ -424,7 +341,6 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
-
 .modal-content {
     background-color: #fefefe;
     position: absolute;
@@ -432,34 +348,6 @@ body {
     border: 1px solid #888;
     width: 80%;
 }
-
-.close-button {
-    top: 10px;
-    right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-
 /*Login*/
 .login-box {
     width: 400px; /* Increased width */
@@ -491,7 +379,6 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
 
 /*Registration*/
 .registration-request {
@@ -525,30 +412,6 @@ body {
 }
 
 
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-}
-
 /* Add Animation */
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
@@ -566,7 +429,19 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
+.close-button {
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-button:hover {
+.close-button:hover{
     background-color: var(--button-hover-color);
+}
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
