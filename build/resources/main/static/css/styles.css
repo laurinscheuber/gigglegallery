@@ -1,13 +1,13 @@
 /** Custom Properties */
 :root {
-    --primary-color: #271F30;
-    --secondary-color: #4aa8e3;
-    --background-color: #F0EFF4;
+    --primary-color: #FFBB70;
+    --secondary-color: #ED9455;
+    --background-color: #f6dec1;
     --danger-color: #E01A4F;
-    --base-space: 1rem;
+    --base-space: 2rem;
     --base-space-small: calc(var(--base-space) / 2);
     --border-radius: var(--base-space-small);
-    --font-family-sans-serif: Roboto, sans-serif;
+    --font-family-sans-serif: Arial, sans-serif;
     --font-family-serif: 'Playfair Display', serif;
 }
 
@@ -29,7 +29,7 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #e6f2e6, #c2d6c2);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,8 +38,78 @@ body {
     color: #333;
 }
 
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Neue Styles für Login und Registration Pages */
+body.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: var(--secondary-color);
+}
+
+
 header, footer {
-    background-color: #3b5323; /* Olive green */
+    background-color: var(--primary-color); /* Olive green */
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -83,7 +153,7 @@ main {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #3b5323; /* Olive green */
+    background-color: var(--primary-color); /* Olive green */
     color: white;
     border: none;
     border-radius: 4px;
@@ -92,11 +162,11 @@ button {
 }
 
 button:hover {
-    background-color: #2d3e1e; /* Darker olive green */
+    background-color: var(--secondary-color); /* Darker olive green */
 }
 
 header, footer {
-    background-color: #3b5323; /* Olive green */
+    background-color: var(--primary-color); /* Olive green */
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -141,11 +211,17 @@ header, footer {
     align-items: center;
 }
 
+.header__text {
+    color: white;
+    font-size: 2em; /* Adjust as needed */
+    text-decoration: none;
+}
+
 .header h2 {
     margin: 0;
     font-size: 24px;
     flex-grow: 1;
-    color: #3b5323; /* Olive green */
+    color: var(--primary-color); /* Olive green */
 }
 
 .profile-picture {
@@ -183,7 +259,7 @@ header, footer {
 
 .friends-section h2 {
     text-align: center;
-    color: #3b5323; /* Olive green */
+    color: var(--primary-color); /* Olive green */
 }
 
 .friends-list {
@@ -201,7 +277,7 @@ header, footer {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #3b5323; /* Olive green */
+    background-color: var(--primary-color); /* Olive green */
     color: white;
     border: none;
     border-radius: 4px;
@@ -209,13 +285,13 @@ header, footer {
 }
 
 .add-friend-button:hover {
-    background-color: #2d3e1e; /* Darker olive green */
+    background-color: var(--secondary-color); /* Darker olive green */
 }
 
 .flip-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #3b5323; /* Olive green */
+    background-color: var(--primary-color); /* Olive green */
     color: white;
     border: none;
     border-radius: 4px;
@@ -223,7 +299,7 @@ header, footer {
 }
 
 .flip-button:hover {
-    background-color: #2d3e1e; /* Darker olive green */
+    background-color: var(--secondary-color); /* Darker olive green */
 }
 
 footer {

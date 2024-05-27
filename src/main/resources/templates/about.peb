@@ -1,0 +1,15 @@
+    {% extends "layout/default.peb" %}
+
+        {% block title %}About{% endblock %}
+
+    {% block content %}
+    <section>
+        <h1>About Us</h1>
+        <p>This is some text about us.</p>
+    </section>
+    <section>
+        <h1>Our Mission</h1>
+        <p>This is some text about our mission.</p>
+    </section>
+    <!-- Add more sections as needed -->
+{% endblock %}
