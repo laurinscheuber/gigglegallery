@@ -22,17 +22,25 @@
                 <label for="profilePicture">Profile Picture URL:</label>
                 <input type="text" id="profilePicture" name="profilePicture">
             </div>
-            <div class="form-group">
-                <label for="bio">Bio:</label>
-                <textarea id="bio" name="bio"></textarea>
+                        <div class="form-group">
+                <label for="binge-watching-beichte">Binge Watching Beichte:</label>
+                <textarea id="binge-watching-beichte" name="binge-watching-beichte"></textarea>
             </div>
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="guilty-pleasure-playlist">Guilty Pleasure Playlist:</label>
+                <input type="text" id="guilty-pleasure-playlist" name="guilty-pleasure-playlist" >
+            </div>
+            <div class="form-group">
+                <label for="zeitreise-ziel">Zeitreise Ziel:</label>
+                <input type="text" id="zeitreise-ziel" name="zeitreise-ziel" >
+            </div>
+            <div class="form-group">
+                <label for="superhelden-spitzname">Superhelden Spitzname:</label>
+                <input type="text" id="superhelden-spitzname" name="superhelden-spitzname" >
             </div>
             <div class="form-group">
                 <label for="birthdate">Birthdate:</label>
-                <input type="date" id="birthdate" name="birthdate" required>
+                <input type="date" id="birthdate" name="birthdate" >
             </div>
             {{ csrf(_csrf) }}
             {{ submit("Register") }}
