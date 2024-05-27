@@ -10,24 +10,24 @@
         <section class="open-book">
 
             <h1>Digital Friendship Book - GiggleGallery</h1>
-            <h2 class="chapter-title">"{{ userName }}"</h2>
+            <h2 class="chapter-title">"{# @pebvariable name="userName" type="" #}{{ userName }}"</h2>
             <div class="container">
                 <div class="dashboard">
                     <div class="book-section">
                         <div class="book-pages">
                             <div class="page own-page">
                                 <div class="book-header">
-                                    <h2>{{ friendName }}</h2>
-                                    <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
+                                    <h2>{# @pebvariable name="friendName" type="" #}{{ friendName }}</h2>
+                                    <img src="{# @pebvariable name="userImage" type="" #}{{ userImage }}" alt="Profile Picture" class="profile-picture">
                                 </div>
                                 <div class="details">
-                                    <p><strong>Geburtsdatum:</strong> {{ birthdate }}</p>
-                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}</p>
-                                    <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}</p>
-                                    <p><strong>Zeitreise-Ziel:</strong> {{ timeTravelDestination }}</p>
-                                    <p><strong>Superhelden-Spitzname:</strong> {{ superheroNickname }}</p>
+                                    <p><strong>Geburtsdatum:</strong> {# @pebvariable name="birthdate" type="" #}{{ birthdate }}</p>
+                                    <p><strong>Guilty Pleasure Playlist:</strong> {# @pebvariable name="guiltyPleasurePlaylist" type="" #}{{ guiltyPleasurePlaylist }}</p>
+                                    <p><strong>Binge-Watching-Beichte:</strong> {# @pebvariable name="bingeWatchingConfession" type="" #}{{ bingeWatchingConfession }}</p>
+                                    <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="timeTravelDestination" type="" #}{{ timeTravelDestination }}</p>
+                                    <p><strong>Superhelden-Spitzname:</strong> {# @pebvariable name="superheroNickname" type="" #}{{ superheroNickname }}</p>
                                     <p><strong>Favorite GIF:</strong></p>
-                                    <img src="{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
+                                    <img src="{# @pebvariable name="favoriteGif" type="" #}{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
                                 </div>
                             </div>
                             <div class="page friend-page">

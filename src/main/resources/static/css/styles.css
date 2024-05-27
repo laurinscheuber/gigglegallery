@@ -19,6 +19,7 @@
 }
 
 html {
+    overflow-y: scroll;
     font-size: 18px;
     font-family: var(--font-family-sans-serif);
     color: var(--primary-color);
@@ -458,9 +459,6 @@ body {
 }
 
 
-
-
-
 /*Login*/
 .login-box {
     width: 400px; /* Increased width */
@@ -511,7 +509,6 @@ body {
     bottom: 0;
     left: 0;
 }
-
 
 
 /*Error*/
