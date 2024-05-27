@@ -10,8 +10,11 @@
 
     <title>{% block title %}Giggle Factory{% endblock %}</title>
 
-    <link rel="icon" href="{{ href('/favicon.ico') }}" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
     <script src="{{ href('/js/index.js') }}" defer></script>
 </head>
