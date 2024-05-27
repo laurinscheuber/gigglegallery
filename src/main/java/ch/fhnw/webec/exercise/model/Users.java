@@ -25,7 +25,7 @@ public class Users implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Friendship> friendshipList;
 
 
@@ -48,7 +48,7 @@ public class Users implements UserDetails {
         this.authorities = authorities;
     }
 
-    public Users() {
+    protected Users() {
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -58,7 +58,6 @@ public class Users implements UserDetails {
     public int getId() {
         return id;
     }
-
 
     public String getGuiltyPleasurePlaylist() {
         return guiltyPleasurePlaylist;
@@ -134,7 +133,4 @@ public class Users implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-
-
 }
