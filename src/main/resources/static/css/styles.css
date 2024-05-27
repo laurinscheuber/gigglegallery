@@ -7,6 +7,7 @@
     --button-color: #e38131;
     --button-hover-color: #f1936a;
     --danger-color: #E01A4F;
+    --gradient-color: linear-gradient(90deg, #f1936a 0%, #e38131 100%);
     --base-space: 1rem;
     --base-space-small: calc(var(--base-space) / 2);
     --border-radius: var(--base-space-small);
@@ -277,7 +278,7 @@ body {
     }
 
     .open-book:before {
-        background-color: #8B4513;
+        background-color: rgba(117, 79, 56, 0.82);
         border-radius: 0.25em;
         bottom: -1em;
         content: '';

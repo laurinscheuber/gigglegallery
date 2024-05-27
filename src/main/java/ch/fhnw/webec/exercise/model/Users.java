@@ -28,14 +28,17 @@ public class Users implements UserDetails {
     @OneToMany
     private List<Friendship> friendshipList;
 
-
-    private String firstName;
-
-
-    private String lastName;
-
-
     private int age;
+
+    private String guiltyPleasurePlaylist;
+
+    private String bingeWatchingBeichte;
+
+    private String zeitreiseZiel;
+
+    private String superheldenSpitzname;
+
+    private String favoriteGIF;
 
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> authorities;
@@ -53,31 +56,58 @@ public class Users implements UserDetails {
         return this.authorities.stream().map(SimpleGrantedAuthority::new).toList();
     }
 
-
     public int getId() {
         return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public int getAge() {
         return age;
     }
 
+    public String getGuiltyPleasurePlaylist() {
+        return guiltyPleasurePlaylist;
+    }
+
+    public void setGuiltyPleasurePlaylist(String guiltyPleasurePlaylist) {
+        this.guiltyPleasurePlaylist = guiltyPleasurePlaylist;
+    }
+
+    public String getBingeWatchingBeichte() {
+        return bingeWatchingBeichte;
+    }
+
+    public void setBingeWatchingBeichte(String bingeWatchingBeichte) {
+        this.bingeWatchingBeichte = bingeWatchingBeichte;
+    }
+
+    public String getZeitreiseZiel() {
+        return zeitreiseZiel;
+    }
+
+    public void setZeitreiseZiel(String zeitreiseZiel) {
+        this.zeitreiseZiel = zeitreiseZiel;
+    }
+
+    public String getSuperheldenSpitzname() {
+        return superheldenSpitzname;
+    }
+
+    public void setSuperheldenSpitzname(String superheldenSpitzname) {
+        this.superheldenSpitzname = superheldenSpitzname;
+    }
+
+    public String getFavoriteGIF() {
+        return favoriteGIF;
+    }
+
+    public void setFavoriteGIF(String favoriteGIF) {
+        this.favoriteGIF = favoriteGIF;
+    }
+
     public String getValue() {
         return String.valueOf(this.getId());
     }
 
-
-    public String getLabel() {
-        return this.getFirstName() + " " + this.getLastName();
-    }
 
     @Override
     public String getUsername() {
@@ -108,5 +138,7 @@ public class Users implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+
 
 }
