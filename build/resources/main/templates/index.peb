@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <div class="page friend-page">
-                                <div class="header">
+                                <div class="-book-header">
                                     <h2>{{ friendName }}</h2>
                                     <img src="{{ friendImage }}" alt="Friend's Profile Picture" class="profile-picture">
                                 </div>
