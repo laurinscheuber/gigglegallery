@@ -19,31 +19,22 @@
                 {{ input("user", "Password", "password", "password", '', _context) }}
             </div>
             <div class="form-group">
-                <label for="profilePicture">Profile Picture URL:</label>
-                <input type="text" id="profilePicture" name="profilePicture">
+                {{  input("profilePicture", "Profile Picture", "profilePicture", "profilePicture", user.profilePicutre, _context)}}
             </div>
                         <div class="form-group">
-                <label for="binge-watching-beichte">Binge Watching Beichte:</label>
-                <textarea id="binge-watching-beichte" name="binge-watching-beichte"></textarea>
+                {{  input("bingeWatchingBeichte", "Binge Watch Beichte", "bingeWatchingBeichte", "bingeWatchingBeichte", user.getGuiltyPleasurePlaylist, _context)}}
             </div>
             <div class="form-group">
-                <label for="guilty-pleasure-playlist">Guilty Pleasure Playlist:</label>
-                <input type="text" id="guilty-pleasure-playlist" name="guilty-pleasure-playlist" >
+                {{  input("guiltyPleasurePlaylist", "Guilty Pleasure Playlist", "guiltyPleasurePlaylist", "guiltyPleasurePlaylist", user.guiltyPleasurePlaylist, _context)}}
             </div>
             <div class="form-group">
-                <label for="zeitreise-ziel">Zeitreise Ziel:</label>
-                <input type="text" id="zeitreise-ziel" name="zeitreise-ziel" >
+                {{  input("zeitreiseZiel", "Zeitreise Ziel", "zeitreiseZiel", "zeitreiseZiel", user.zeitreiseZiel, _context)}}
             </div>
             <div class="form-group">
-                <label for="superhelden-spitzname">Superhelden Spitzname:</label>
-                <input type="text" id="superhelden-spitzname" name="superhelden-spitzname" >
-            </div>
-            <div class="form-group">
-                <label for="birthdate">Birthdate:</label>
-                <input type="date" id="birthdate" name="birthdate" >
+                {{  input("superheldenSpitzname", "Superhelden Spitzname", "superheldenSpitzname", "superheldenSpitzname", user.superheldenSpitzname, _context)}}
             </div>
             {{ csrf(_csrf) }}
-            {{ submit("Register") }}
+    {{ submit("Register") }}
         </form>
         <div class="registration-request">
             <p>Already have an account? <a href="/login">Login here</a>.</p>

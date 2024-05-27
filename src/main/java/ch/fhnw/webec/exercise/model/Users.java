@@ -28,7 +28,6 @@ public class Users implements UserDetails {
     @OneToMany
     private List<Friendship> friendshipList;
 
-    private int age;
 
     private String guiltyPleasurePlaylist;
 
@@ -49,7 +48,7 @@ public class Users implements UserDetails {
         this.authorities = authorities;
     }
 
-    protected Users() {
+    public Users() {
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -60,9 +59,6 @@ public class Users implements UserDetails {
         return id;
     }
 
-    public int getAge() {
-        return age;
-    }
 
     public String getGuiltyPleasurePlaylist() {
         return guiltyPleasurePlaylist;
