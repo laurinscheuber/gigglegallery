@@ -1,3 +1,5 @@
+   {%  import "layout/default" %}
+
     {% import "form/csrf" %}
 
 <!DOCTYPE html>
@@ -10,38 +12,44 @@
 
     <title>{% block title %}Giggle Factory{% endblock %}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="{{ href('/favicon.ico') }}" type="image/x-icon" />
     <link href="{{ href('/css/styles.css') }}" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
     <script src="{{ href('/js/index.js') }}" defer></script>
 </head>
 <body>
     <header class="header">
-    <div class="header__container container">
-        <a href="{{ href('/') }}" class="header__logo">
-            <img src="{{ href('/img/Giggle_Gallery_logo.png') }}" alt="Giggle Factory" class="header__logo-image">
-        </a>
-    </div>
-</header>
+        <div class="header__container container">
+            <a href="{{ href('/') }}" class="header__logo">
+                <span class="header__icon material-icons">menu_book</span>
+                <span class="header__text">Giggle Gallery</span>
+            </a>
+        </div>
+    </header>
     <main class="main">
         <div class="main__container container">
             {% block content %}{% endblock %}
         </div>
     </main>
-    <footer style="display: flex; justify-content: space-between; padding: 10px; background-color: #f8f9fa; position: fixed; bottom: 0; width: 100%;">
-    <div>
-        <p>&copy; 2024 FHNW | Web Engineering</p>
-    </div>
-    <div>
-        {% if user %}
-            <a href="/logout">Logout</a>
-        {% else %}
-            <a href="/login">Login</a> | <a href="/about">About</a>
-        {% endif %}
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="footer__container container">
+            <span class="footer__copyright">&copy; FHNW &vert; Web Engineering</span>
+            <nav>
+                <ul class="footer__menu">
+                    {% if request.userPrincipal is not null %}
+                        <li class="footer__menu-item">
+                            <form action="{{ href('/logout') }}" method="post" class="footer__logout-form">
+                                {{ csrf(_csrf) }}
+                                <input type="submit" value="Logout" class="link link--footer footer__logout-form-submit">
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="footer__menu-item"><a href="{{ href('/login') }}" class="link link--footer">Login</a></li>
+                    {% endif %}
+                    <li class="footer__menu-item"><a href="{{ href('/about') }}" class="link link--footer">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 </body>
 </html>

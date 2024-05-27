@@ -12,9 +12,8 @@
     <div id="container">
 
         <section class="open-book">
-            <header>
-                <h1>Digital Friendship Book - GiggleGallery</h1>
-            </header>
+
+            <h1>Digital Friendship Book - GiggleGallery</h1>
             <h2 class="chapter-title">"{{ userName }}"</h2>
             <div class="container">
                 <div class="dashboard">

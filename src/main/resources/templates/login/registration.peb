@@ -1,11 +1,24 @@
+    {% extends "layout/default" %}
+
+        {% import "form/input" %}
+        {% import "form/csrf" %}
+        {% import "form/submit" %}
+
+
+        {% block title %}Login{% endblock %}
+
+    {% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registration</title>
-    <link href="{{ href('/css/login.css') }}" rel="stylesheet"/>
+    <link href="{{ href('/css/styles.css') }}" rel="stylesheet"/>
 </head>
+
+
 <body>
 <div class="login-box">
     <main class="form-container">
@@ -42,8 +55,5 @@
         </div>
     </main>
 </div>
-<footer>
-    <p>&copy; 2024 GiggleGallery</p>
-</footer>
-</body>
-</html>
+
+ {% endblock %}

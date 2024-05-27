@@ -1,33 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">
-</head>
-<body>
+    {% extends "layout/default" %}
+
+        {% import "form/input" %}
+        {% import "form/csrf" %}
+        {% import "form/submit" %}
+
+
+        {% block title %}Login{% endblock %}
+
+    {% block content %}
+
 <div class="login-box">
     <main class="form-container">
         <form action="/login" method="post">
             <h2>Login</h2>
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                {{ input("user", "Username", "username", "text", username, _context) }}
+                {{ input("user", "Password", "password", "password", '', _context) }}
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Login</button>
+            {{ csrf(_csrf) }}
+            <button>{{ submit("Login") }}</button>
+            {% if hasLoginError %}
+                <p class="form__error">An error occurred while logging in, please try again.</p>
+            {% endif %}
         </form>
         <div class="registration-request">
             <p>Don't have an account? <a href="/register">Register here</a>.</p>
         </div>
     </main>
 </div>
-<footer>
-    <p>&copy; 2024 GiggleGallery</p>
-</footer>
-</body>
-</html>
+{% endblock %}
