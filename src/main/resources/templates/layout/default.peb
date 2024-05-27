@@ -21,9 +21,19 @@
     <header class="header">
         <div class="header__container container">
             <a href="{{ href('/') }}" class="header__logo">
-                <span class="header__icon material-icons">menu_book</span>
-                <span class="header__text">Giggle Gallery</span>
-            </a>
+        Giggle Gallery
+    </a>
+</a>
+            {% if request.userPrincipal is not null %}
+                        <p class="header__menu-item">
+                            <form action="{{ href('/logout') }}" method="post" class="header__logout-form">
+                                {{ csrf(_csrf) }}
+                                <input type="submit" value="Logout" class="link link--header header__logout-form-submit">
+                            </form>
+                        </p>
+                    {% else %}
+                        <p class="header__menu-item"><a href="{{ href('/login') }}" class="link link--header">Login</a></p>
+                    {% endif %}
         </div>
     </header>
     <main class="main">
@@ -36,17 +46,8 @@
             <span class="footer__copyright">&copy; FHNW &vert; Web Engineering</span>
             <nav>
                 <ul class="footer__menu">
-                    {% if request.userPrincipal is not null %}
-                        <li class="footer__menu-item">
-                            <form action="{{ href('/logout') }}" method="post" class="footer__logout-form">
-                                {{ csrf(_csrf) }}
-                                <input type="submit" value="Logout" class="link link--footer footer__logout-form-submit">
-                            </form>
-                        </li>
-                    {% else %}
-                        <li class="footer__menu-item"><a href="{{ href('/login') }}" class="link link--footer">Login</a></li>
-                    {% endif %}
-                    <li class="footer__menu-item"><a href="{{ href('/about') }}" class="link link--footer">About</a></li>
+
+                    <span class="footer__menu-item"><a href="{{ href('/about') }}" class="link link--footer">About</a></span>
                 </ul>
             </nav>
         </div>

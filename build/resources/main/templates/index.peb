@@ -1,13 +1,9 @@
 {# @pebvariable name="title" type="java.lang.String" #}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
-    <link href="{{ href('/css/styles.css') }}" rel="stylesheet"/>
-    <script src="{{ href('/js/index.js') }}" defer></script>
-</head>
-<body>
+    {% extends "layout/default" %}
+
+    {% block title %}Giggle Gallery{% endblock %}
+
+{% block content %}
 <div id="wrapper">
     <div id="container">
 
@@ -20,7 +16,7 @@
                     <div class="book-section">
                         <div class="book-pages">
                             <div class="page own-page">
-                                <div class="header">
+                                <div class="book-header">
                                     <h2>{{ friendName }}</h2>
                                     <img src="{{ userImage }}" alt="Profile Picture" class="profile-picture">
                                 </div>
@@ -79,11 +75,7 @@
                     </div>
                 </div>
             </div>
-            <footer>
-                <p>&copy; 2024 GiggleGallery</p>
-            </footer>
         </section>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}

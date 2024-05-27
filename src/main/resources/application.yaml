@@ -17,8 +17,8 @@ spring:
 
     security:
         user:
-            name: tala
-            password: tala
+            name: admin
+            password: admin
 
 
 server:

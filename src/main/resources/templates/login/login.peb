@@ -18,13 +18,13 @@
                 {{ input("user", "Password", "password", "password", '', _context) }}
             </div>
             {{ csrf(_csrf) }}
-            <button>{{ submit("Login") }}</button>
+            {{ submit("Login") }}
             {% if hasLoginError %}
                 <p class="form__error">An error occurred while logging in, please try again.</p>
             {% endif %}
         </form>
         <div class="registration-request">
-            <p>Don't have an account? <a href="/register">Register here</a>.</p>
+            <p>Don't have an account? <a href="/registration">Register here</a>.</p>
         </div>
     </main>
 </div>

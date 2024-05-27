@@ -1,4 +1,4 @@
-    {% extends "layout/default.peb" %}
+    {% extends "layout/default" %}
 
         {% block title %}About{% endblock %}
 
