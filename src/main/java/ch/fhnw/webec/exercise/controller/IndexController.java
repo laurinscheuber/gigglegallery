@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 public class IndexController {
-    @RequestMapping(path = "/", method = RequestMethod.GET)
+    @RequestMapping(path = "/")
     public String index(Model model) {
         model.addAttribute("title", "Giggle Gallery");
         List<String> items = Arrays.asList("Item 1", "Item 2", "Item 3");

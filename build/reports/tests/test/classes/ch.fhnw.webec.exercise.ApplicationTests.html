@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.570s</div>
+<div class="counter">1.248s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,7 +82,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">1.570s</td>
+<td class="success">1.248s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -90,8 +90,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>09:30:18.063 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ch.fhnw.webec.exercise.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-09:30:18.317 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ch.fhnw.webec.exercise.Application for test class ch.fhnw.webec.exercise.ApplicationTests
+<pre>22:08:59.653 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ch.fhnw.webec.exercise.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:09:00.058 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ch.fhnw.webec.exercise.Application for test class ch.fhnw.webec.exercise.ApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -101,25 +101,32 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.3)
 
-2024-05-27T09:30:19.633+02:00  INFO 12320 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Starting ApplicationTests using Java 21.0.1 with PID 12320 (started by tamir in C:\Users\tamir\OneDrive - FHNW\Semester 04_23\webeC\GiggleGallery)
-2024-05-27T09:30:19.640+02:00  INFO 12320 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-05-27T09:30:22.918+02:00  INFO 12320 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-27T09:30:23.174+02:00  INFO 12320 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216 ms. Found 2 JPA repository interfaces.
-2024-05-27T09:30:25.487+02:00  INFO 12320 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-27T09:30:25.732+02:00  INFO 12320 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-27T09:30:25.909+02:00  INFO 12320 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-27T09:30:27.107+02:00  INFO 12320 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-27T09:30:27.230+02:00  INFO 12320 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-27T09:30:28.523+02:00  INFO 12320 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/application user=
-2024-05-27T09:30:28.532+02:00  INFO 12320 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-27T09:30:33.338+02:00  INFO 12320 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-27T09:30:33.479+02:00  INFO 12320 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-27T09:30:35.869+02:00  WARN 12320 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-27T09:30:36.460+02:00  INFO 12320 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-05-27T09:30:37.530+02:00  INFO 12320 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f40bb80, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c42ee90, org.springframework.security.web.context.SecurityContextHolderFilter@33671907, org.springframework.security.web.header.HeaderWriterFilter@24090832, org.springframework.web.filter.CorsFilter@70c2a046, org.springframework.security.web.csrf.CsrfFilter@3f563397, org.springframework.security.web.authentication.logout.LogoutFilter@54d62c35, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4f50e974, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67d6bb59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a632663, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3803bc1a, org.springframework.security.web.access.ExceptionTranslationFilter@921dbcf, org.springframework.security.web.access.intercept.AuthorizationFilter@6d4b09c7]
-Hibernate: select u1_0.id,u1_0.age,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
-Hibernate: select a1_0.users_id,a1_0.authorities from users_authorities a1_0 where a1_0.users_id=?
-2024-05-27T09:30:40.413+02:00  INFO 12320 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Started ApplicationTests in 21.515 seconds (process running for 25.297)
+2024-05-27T22:09:01.489+02:00  INFO 17048 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Starting ApplicationTests using Java 21.0.1 with PID 17048 (started by tamir in C:\Users\tamir\OneDrive - FHNW\Semester 04_23\webeC\GiggleGallery)
+2024-05-27T22:09:01.493+02:00  INFO 17048 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-27T22:09:04.055+02:00  INFO 17048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27T22:09:04.268+02:00  INFO 17048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194 ms. Found 2 JPA repository interfaces.
+2024-05-27T22:09:05.654+02:00  INFO 17048 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27T22:09:05.854+02:00  INFO 17048 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27T22:09:05.990+02:00  INFO 17048 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-27T22:09:06.564+02:00  INFO 17048 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27T22:09:06.629+02:00  INFO 17048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-27T22:09:07.294+02:00  INFO 17048 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/application user=
+2024-05-27T22:09:07.299+02:00  INFO 17048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-27T22:09:09.714+02:00  INFO 17048 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: alter table if exists users add column binge_watching_beichte varchar(255)
+Hibernate: alter table if exists users add column favoritegif varchar(255)
+Hibernate: alter table if exists users add column guilty_pleasure_playlist varchar(255)
+Hibernate: alter table if exists users add column superhelden_spitzname varchar(255)
+Hibernate: alter table if exists users add column zeitreise_ziel varchar(255)
+2024-05-27T22:09:09.855+02:00  INFO 17048 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27T22:09:10.951+02:00  WARN 17048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27T22:09:11.222+02:00  INFO 17048 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-05-27T22:09:11.845+02:00  INFO 17048 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17baaf07, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d5009c0, org.springframework.security.web.context.SecurityContextHolderFilter@4922dc84, org.springframework.security.web.header.HeaderWriterFilter@27381497, org.springframework.web.filter.CorsFilter@7f478529, org.springframework.security.web.csrf.CsrfFilter@381db99e, org.springframework.security.web.authentication.logout.LogoutFilter@38a6ca39, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67887bf2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66790851, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3796ff4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45ed58b, org.springframework.security.web.access.ExceptionTranslationFilter@b8e6981, org.springframework.security.web.access.intercept.AuthorizationFilter@4c020e58]
+Hibernate: select u1_0.id,u1_0.age,u1_0.binge_watching_beichte,u1_0.favoritegif,u1_0.guilty_pleasure_playlist,u1_0.password,u1_0.superhelden_spitzname,u1_0.username,u1_0.zeitreise_ziel from users u1_0 where u1_0.username=?
+Hibernate: select next value for users_seq
+Hibernate: insert into users (age,binge_watching_beichte,favoritegif,guilty_pleasure_playlist,password,superhelden_spitzname,username,zeitreise_ziel,id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: insert into users_authorities (users_id,authorities) values (?,?)
+2024-05-27T22:09:13.687+02:00  INFO 17048 --- [    Test worker] c.fhnw.webec.exercise.ApplicationTests   : Started ApplicationTests in 13.057 seconds (process running for 20.521)
 </pre>
 </span>
 </div>
@@ -141,7 +148,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 27.05.2024, 09:30:42</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 27.05.2024, 22:09:15</p>
 </div>
 </div>
 </body>

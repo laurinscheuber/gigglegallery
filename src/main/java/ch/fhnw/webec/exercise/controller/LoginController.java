@@ -23,7 +23,7 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
+    @GetMapping(path = "/login")
     public String login(Authentication authentication, @RequestParam("error") Optional<String> error, Model model) {
         if (authentication != null && authentication.isAuthenticated()) {
             return "redirect:/";
