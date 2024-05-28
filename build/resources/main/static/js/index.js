@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Fetch current user data
-        fetch('/api/users/me')
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector('.own-page .header h2').innerText = data.name;
-                document.querySelector('.own-page .profile-picture').src = data.profilePicture;
-                document.querySelector('.own-page .details').innerHTML = `
+    fetch('/api/users/me')
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector('.own-page .header h2').innerText = data.name;
+            document.querySelector('.own-page .profile-picture').src = data.profilePicture;
+            document.querySelector('.own-page .details').innerHTML = `
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Geburtsdatum:</strong> ${data.birthdate}</p>
                 <p><strong>Guilty Pleasure Playlist:</strong> ${data.guiltyPleasurePlaylist}</p>
@@ -63,22 +63,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Favorite GIF:</strong></p>
                 <img src="${data.favoriteGif}" alt="Favorite GIF" class="favorite-gif">
             `;
-            });
+        });
 
 
     // Fetch friend requests
-        fetch('/api/friendRequests')
-            .then(response => response.json())
-            .then(data => {
-                const friendsList = document.querySelector('.friends-list');
-                friendsList.innerHTML = '';
-                data.forEach(request => {
-                    const friendElement = document.createElement('div');
-                    friendElement.classList.add('friend');
-                    friendElement.innerText = request.sender.name;
-                    friendsList.appendChild(friendElement);
-                });
+    fetch('/api/friendRequests')
+        .then(response => response.json())
+        .then(data => {
+            const friendsList = document.querySelector('.friends-list');
+            friendsList.innerHTML = '';
+            data.forEach(request => {
+                const friendElement = document.createElement('div');
+                friendElement.classList.add('friend');
+                friendElement.innerText = request.sender.name;
+                friendsList.appendChild(friendElement);
             });
+        });
 
     function fetchGifs() {
         const query = document.getElementById('query-input').value;
@@ -110,10 +110,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 const img = document.createElement('img');
                 img.src = gif.images.fixed_height.url;
                 img.alt = gif.title;
+                img.addEventListener('click', () => {
+                    selectGif(gif);
+                });
                 gifsContainer.appendChild(img);
             });
         } else {
             gifsContainer.innerHTML = 'No results found';
         }
+    }
+
+    function selectGif(gif) {
+        const gifContainer = document.getElementById('gifContainer');
+        gifContainer.innerHTML = `
+            <img src="${gif.images.fixed_height.url}" alt="${gif.title}">
+        `;
+        modal.style.display = 'none';
+        // Update the user's favorite GIF on the server
+        fetch('/api/users/me/favoriteGif', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ favoriteGif: gif.images.fixed_height.url })
+        }).then(response => {
+            if (response.ok) {
+                console.log('Favoriten-GIF erfolgreich aktualisiert.');
+            } else {
+                console.error('Fehler beim Aktualisieren des Favoriten-GIFs.');
+            }
+        });
+
+
     }
 });
