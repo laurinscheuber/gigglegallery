@@ -38,8 +38,9 @@
                                     <p><strong>Favorite GIF:</strong></p>
                                    <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="favorite-gif"></div>
                             </div>
-                            <button id="add-gif">Add Favorite GIF</button>
+
                             <div id="gifContainer"> </div>
+                            <button id="add-gif">Add Favorite GIF</button>
                             <button class="flip-button" id="prev-page">Previous</button>
                             <button class="flip-button" id="next-page">Next</button>
 
@@ -55,8 +56,7 @@
                             </div>
                             <!-- Add more friend entries as needed -->
                         </div>
-
-
+                        <button id="add-friend">Add Friend</button>
                     </div>
                 </div>
                 <div class="modal">
