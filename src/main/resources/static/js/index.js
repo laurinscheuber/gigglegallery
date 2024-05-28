@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addGifButtons = document.getElementById("add-gif");
     const closeButton = document.getElementById("close-button");
     const searchButton = document.getElementById("search-button");
+    const addFriend = document.getElementById("add-friend-button");
 
     function updatePageVisibility() {
         pages.forEach((page, index) => {
@@ -47,13 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Fetch current user data
-    fetch('/api/users/me')
-        .then(response => response.json())
-        .then(data => {
-            document.querySelector('.own-page .header h2').innerText = data.name;
-            document.querySelector('.own-page .profile-picture').src = data.profilePicture;
-            document.querySelector('.own-page .details').innerHTML = `
+
+// Fetch current user data
+fetch('/api/users/me')
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector('.own-page .header h2').innerText = data.name;
+        document.querySelector('.own-page .profile-picture').src = data.profilePicture;
+        document.querySelector('.own-page .details').innerHTML = `
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Geburtsdatum:</strong> ${data.birthdate}</p>
                 <p><strong>Guilty Pleasure Playlist:</strong> ${data.guiltyPleasurePlaylist}</p>
@@ -63,84 +65,85 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Favorite GIF:</strong></p>
                 <img src="${data.favoriteGif}" alt="Favorite GIF" class="favorite-gif">
             `;
+    });
+
+
+// Fetch friend requests
+fetch('/api/friendRequests')
+    .then(response => response.json())
+    .then(data => {
+        const friendsList = document.querySelector('.friends-list');
+        friendsList.innerHTML = '';
+        data.forEach(request => {
+            const friendElement = document.createElement('div');
+            friendElement.classList.add('friend');
+            friendElement.innerText = request.sender.name;
+            friendsList.appendChild(friendElement);
         });
+    });
 
-
-    // Fetch friend requests
-    fetch('/api/friendRequests')
-        .then(response => response.json())
-        .then(data => {
-            const friendsList = document.querySelector('.friends-list');
-            friendsList.innerHTML = '';
-            data.forEach(request => {
-                const friendElement = document.createElement('div');
-                friendElement.classList.add('friend');
-                friendElement.innerText = request.sender.name;
-                friendsList.appendChild(friendElement);
-            });
+function fetchGifs() {
+    const query = document.getElementById('query-input').value;
+    if (!query) {
+        alert('Please enter a search query');
+        return;
+    }
+    const url = `/search_gifs?query=${encodeURIComponent(query)}&limit=10`;
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => displayGifs(data))
+        .catch(error => {
+            console.error('Error fetching GIFs:', error);
+            const gifsContainer = document.getElementById('gifs-container');
+            gifsContainer.innerHTML = 'Error fetching GIFs. Please try again later.';
         });
+}
 
-    function fetchGifs() {
-        const query = document.getElementById('query-input').value;
-        if (!query) {
-            alert('Please enter a search query');
-            return;
-        }
-        const url = `/search_gifs?query=${encodeURIComponent(query)}&limit=10`;
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => displayGifs(data))
-            .catch(error => {
-                console.error('Error fetching GIFs:', error);
-                const gifsContainer = document.getElementById('gifs-container');
-                gifsContainer.innerHTML = 'Error fetching GIFs. Please try again later.';
+function displayGifs(data) {
+    const gifsContainer = document.getElementById('gifs-container');
+    gifsContainer.innerHTML = ''; // Clear previous results
+    if (data && data.data && data.data.length > 0) {
+        data.data.forEach(gif => {
+            const img = document.createElement('img');
+            img.src = gif.images.fixed_height.url;
+            img.alt = gif.title;
+            img.addEventListener('click', () => {
+                selectGif(gif);
             });
+            gifsContainer.appendChild(img);
+        });
+    } else {
+        gifsContainer.innerHTML = 'No results found';
     }
+}
 
-    function displayGifs(data) {
-        const gifsContainer = document.getElementById('gifs-container');
-        gifsContainer.innerHTML = ''; // Clear previous results
-        if (data && data.data && data.data.length > 0) {
-            data.data.forEach(gif => {
-                const img = document.createElement('img');
-                img.src = gif.images.fixed_height.url;
-                img.alt = gif.title;
-                img.addEventListener('click', () => {
-                    selectGif(gif);
-                });
-                gifsContainer.appendChild(img);
-            });
-        } else {
-            gifsContainer.innerHTML = 'No results found';
-        }
-    }
-
-    function selectGif(gif) {
-        const gifContainer = document.getElementById('gifContainer');
-        gifContainer.innerHTML = `
+function selectGif(gif) {
+    const gifContainer = document.getElementById('gifContainer');
+    gifContainer.innerHTML = `
             <img src="${gif.images.fixed_height.url}" alt="${gif.title}">
         `;
-        modal.style.display = 'none';
-        // Update the user's favorite GIF on the server
-        fetch('/api/users/me/favoriteGif', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ favoriteGif: gif.images.fixed_height.url })
-        }).then(response => {
-            if (response.ok) {
-                console.log('Favoriten-GIF erfolgreich aktualisiert.');
-            } else {
-                console.error('Fehler beim Aktualisieren des Favoriten-GIFs.');
-            }
-        });
+    modal.style.display = 'none';
+    // Update the user's favorite GIF on the server
+    fetch('/api/users/me/favoriteGif', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({favoriteGif: gif.images.fixed_height.url})
+    }).then(response => {
+        if (response.ok) {
+            console.log('Favoriten-GIF erfolgreich aktualisiert.');
+        } else {
+            console.error('Fehler beim Aktualisieren des Favoriten-GIFs.');
+        }
+    });
 
 
-    }
-});
+}
+})
+;
