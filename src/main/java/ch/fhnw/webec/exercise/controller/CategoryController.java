@@ -2,8 +2,10 @@ package ch.fhnw.webec.exercise.controller;
 
 import ch.fhnw.webec.exercise.model.Category;
 import ch.fhnw.webec.exercise.repository.CategoryRepository;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -23,16 +25,18 @@ public class CategoryController {
     }
 
     @GetMapping("/add")
-    public String getAddCategoryForm() {
+    public String getAddCategoryForm(Model model) {
+        model.addAttribute("category", new Category());
         return "category-add";
     }
 
-    @PostMapping("/add")
-    public String addCategory(@RequestParam String name) {
-        Category category = new Category();
-        category.setName(name);
-        categoryRepository.save(category);
-        return "redirect:/category";
+    @PostMapping("/addCategory")
+    public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "categoryForm";
+        }
+        // Speichern der Kategorie
+        return "redirect:/categories";
     }
 
     @GetMapping("/{id}")
@@ -43,10 +47,14 @@ public class CategoryController {
     }
 
     @PostMapping("/{id}")
-    public String editCategory(@PathVariable String id, @RequestParam String name) {
-        Category category = categoryRepository.findById(id).orElseThrow();
-        category.setName(name);
-        categoryRepository.save(category);
+    public String editCategory(@PathVariable String id, @Valid @ModelAttribute("category") Category category, BindingResult result) {
+        if (result.hasErrors()) {
+            return "category-edit";
+        }
+        Category existingCategory = categoryRepository.findById(id).orElseThrow();
+        existingCategory.setName(category.getName());
+        categoryRepository.save(existingCategory);
         return "redirect:/category";
     }
+
 }

@@ -1,10 +1,12 @@
 package ch.fhnw.webec.exercise.model;
 
 import ch.fhnw.webec.exercise.form.SelectOption;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
@@ -13,6 +15,10 @@ import java.util.List;
 public class Category implements SelectOption {
     @Id
     private Long id;
+
+    @NotEmpty
+    @Column(nullable = false)
+    private String name;
 
     @OneToMany
     private List<Friendship> friendshipList;
@@ -25,7 +31,7 @@ public class Category implements SelectOption {
         this.friendshipList = friendshipList;
     }
 
-    private String name;
+
 
     public long getId() {
         return id;
