@@ -27,7 +27,7 @@ public class AddAdminUser {
         try {
             this.userService.loadUserByUsername(this.username);
         } catch (UsernameNotFoundException e) {
-            this.userService.addUser(this.username, this.password, Set.of("ROLE_ADMIN"));
+            this.userService.addUser(this.username, this.password, Set.of("ROLE_ADMIN"), null, null, null, null, null);
         }
     }
 }
