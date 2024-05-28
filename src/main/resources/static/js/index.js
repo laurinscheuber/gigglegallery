@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.getElementById("close-button");
     const searchButton = document.getElementById("search-button");
     const addFriend = document.getElementById("add-friend-button"); // via topics Multiselect Booklist
+    const modalFriends = document.querySelector(".modal-friends");
+    const closeButtonFriends = document.getElementById("add-friend-close");
 
     function updatePageVisibility() {
         pages.forEach((page, index) => {
@@ -47,7 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
-
+    addFriend.addEventListener("click", () => {
+        modalFriends.style.display = "block";
+    });
+    closeButtonFriends.addEventListener("click", () => {
+        modalFriends.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modalFriends.style.display = "none";
+        }
+    });
 
     /*// Fetch current user data
     fetch('/api/users/me')
