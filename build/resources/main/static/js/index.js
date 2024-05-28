@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const addGifButtons = document.getElementById("add-gif");
     const closeButton = document.getElementById("close-button");
     const searchButton = document.getElementById("search-button");
-    const addFriend = document.getElementById("add-friend-button");
+    const addFriend = document.getElementById("add-friend-button"); // via topics Multiselect Booklist
 
     function updatePageVisibility() {
         pages.forEach((page, index) => {
