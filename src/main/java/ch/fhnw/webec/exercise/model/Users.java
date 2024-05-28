@@ -16,7 +16,7 @@ import java.util.Set;
 public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @NotEmpty
     @Column(nullable = false, unique = true)
     private String username;
@@ -67,7 +67,7 @@ public class Users implements UserDetails {
         return this.authorities.stream().map(SimpleGrantedAuthority::new).toList();
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -158,7 +158,7 @@ public class Users implements UserDetails {
         return friendshipList;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }
