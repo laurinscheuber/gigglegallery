@@ -72,4 +72,14 @@ public class CategoryController {
         categoryService.deleteCategory(id);
         return "redirect:/category";
     }
+
+    @GetMapping("/categories")
+    public String getAllCategories2(Model model) {
+        List<Category> categories = categoryService.findAll();
+        model.addAttribute("categories", categories);
+        return "category";
+    }
+
+
+
 }

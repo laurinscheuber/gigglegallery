@@ -8,11 +8,16 @@ spring:
     sql:
         init:
             mode: always
+
+    h2:
+        console:
+            enabled: false
     jpa:
         defer-datasource-initialization: true
         show-sql: true
         hibernate:
             ddl-auto: update
+
 
     security:
         user:

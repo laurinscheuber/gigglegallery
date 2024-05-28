@@ -444,3 +444,33 @@ input[type="text"], input[type="password"], select, textarea {
 .close-button:hover {
     color: #f00; /* Red color on hover for attention */
 }
+
+.category-list__item {
+    padding: 10px; /* Padding for better spacing */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    background-color: #f0f0f0; /* Light gray background */
+    margin: 5px; /* Margin between items */
+    cursor: pointer; /* Pointer cursor for interactive feel */
+}
+
+.category-list__item:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+.delete-link {
+    color: #f00; /* Red color for delete links */
+    cursor: pointer; /* Pointer cursor for interactive feel */
+    font-weight: bold;
+}
+
+.delete-link:hover {
+    color: darkred;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.my-link:hover {
+    text-decoration: none;
+}

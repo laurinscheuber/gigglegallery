@@ -25,6 +25,7 @@ public class SecurityConfiguration {
             .requestMatchers("/category").permitAll()
             .requestMatchers("/user/").permitAll()
             .requestMatchers("/user/{id}").permitAll()
+            .requestMatchers("/profile").permitAll()
             .anyRequest().authenticated()
         ).formLogin(form -> form
             .loginPage("/login").permitAll()

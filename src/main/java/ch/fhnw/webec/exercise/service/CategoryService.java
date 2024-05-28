@@ -26,6 +26,15 @@ public class CategoryService {
         return categoryRepository.findById(id);
     }
 
+    public List<Category> getCategoryByName(String name) {
+        return categoryRepository.findCategoryByName(name);
+    }
+
+    public List<Category> findAll() {
+        return categoryRepository.findAll();
+    }
+
+
     public Category addCategory(Category category) {
         return categoryRepository.save(category);
     }
@@ -41,6 +50,8 @@ public class CategoryService {
                 return categoryRepository.save(updatedCategory);
             });
     }
+
+
 
     public void deleteCategory(String id) {
         categoryRepository.deleteById(id);
