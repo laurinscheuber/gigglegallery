@@ -6,17 +6,46 @@
     font-family: 'Arial', sans-serif;
 }
 
-body {
-    font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
+/* Enhance typography and readability */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold; /* More natural weight for headings */
+    color: #333; /* Ensuring headers are slightly darker for better focus */
 }
+
+p {
+    line-height: 1.6; /* Improving line spacing for readability */
+    margin-bottom: 1rem; /* Adding more space below paragraphs */
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #eef2f3, #8fa1b2);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for main content, header, and footer */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px; /* Initial padding */
+}
+
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    flex-grow: 1; /* allows the container to grow and take up available space */
 }
 
 .header {
@@ -54,14 +83,61 @@ body {
 }
 
 .main {
-    padding: 2rem 0;
+    flex: 1;  /* Allow main content to grow and fill space */
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin to the bottom of the main content */
 }
+
+.main__container {
+    /* ... your existing main container styles ... */
+    max-width: 960px; /* Limit width for better readability */
+    margin: 0 auto;    /* Center the container */
+}
+
+.form-group { /* Group for each form field */
+    margin-bottom: 20px; /* Add spacing between form groups */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px);  /* Account for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+button[type="submit"] {
+    /* ... your existing button styles ... */
+    width: 100%;  /* Make button take full width */
+}
+
 
 .footer {
     background: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: flex-start; /* Left-align content */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer__menu-item a {
@@ -256,4 +332,91 @@ body {
 
 .registration-request a:hover {
     text-decoration: underline;
+}
+
+/* Ensure footer stays at the bottom of the page */
+html, body {
+    height: 100%;
+}
+
+.container {
+    flex: 1;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive Design Tweaks */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Allowing more space on smaller screens */
+    }
+
+    .main__container {
+        padding: 10px; /* Reducing padding on smaller devices */
+    }
+
+    .header__menu-item, .footer__menu-item {
+        margin: 10px 0; /* Adjust menu items in mobile view */
+    }
+}
+
+/* Interactive Elements - Buttons and Links */
+button, .button {
+    background-color: #007bff; /* A vibrant blue for better visibility */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase; /* Making buttons stand out more */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+button:hover, .button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+a {
+    color: #007bff; /* Ensuring links are clearly visible */
+    text-decoration: none; /* Removing underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover for better usability */
+}
+
+/* Enhancing form elements for better user experience */
+input[type="text"], input[type="password"], select, textarea {
+    width: 100%; /* Full width to align with form layout */
+    padding: 8px; /* Adequate padding */
+    border: 1px solid #ccc; /* Subtle borders */
+    border-radius: 4px; /* Consistent rounded corners */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Inner shadow for depth */
+}
+
+/* Additional styling for specific sections and IDs */
+#query-input, #search-button {
+    border-radius: 4px; /* Consistent border-radius */
+    border: 1px solid #ddd; /* More defined border */
+}
+
+/* Modal adjustments for better visibility */
+.modal-content {
+    padding: 20px; /* More padding inside modals */
+    background-color: #fff; /* Bright background for contrast */
+    border: none; /* Cleaner look without border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft outer shadow for popup effect */
+}
+
+.close-button {
+    color: #aaa; /* Subtle color for close button */
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #f00; /* Red color on hover for attention */
 }

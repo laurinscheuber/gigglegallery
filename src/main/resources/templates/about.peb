@@ -3,53 +3,53 @@
         {% block title %}About{% endblock %}
 
     {% block content %}
-    <main>
-    <section>
-      <h2>Project</h2>
-      <div>
-        <h3>Team members</h3>
-        <p><strong>Unser Team:</strong> Tamira Leber & Laurin Scheuber</p>
-      </div>
-      <div>
-        <h3>Description</h3>
-        <p><strong>Unsere Idee:</strong> Ein digitales Freundschaftsbuch, die "GiggleGallery". Jeder Nutzer loggt sich ein und erstellt seine eigene Seite des Freundschaftsbuches. Dies hat nebst normalen Informationen wie Namen und Geburtsdatum auch lustige Kategorien wie Guilty Pleasure Playlist, Binge-Watching-Beichte, Zeitreise-Ziel, Superhelden-Spitzname etc. Dann kann man Personen als Freunde anfragen. Wenn diese die Anfrage annehmen, erscheint ihre Seite im eigenen Freundschaftsbuch.</p>
-      </div>
-      <div>
-        <h3>Entitäten</h3>
-        <ul>
-          <li>User (Profilepicture, bio, name, ...)</li>
-          <li>FriendRequest (Sender, Receiver)</li>
-          <li>Category (category name)</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Beziehungen</h3>
-        <ul>
-          <li>User (n) -- friends -- (m) User</li>
-          <li>User (1) -- (n) FriendRequest (n) -- (1) User</li>
-          <li>FriendRequest (n) -- (1) Category</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Individual</h3>
-        <ul>
-          <li>API Anbindung (Giphy)</li>
-          <li>User Login</li>
-        </ul>
-      </div>
-    </section>
+   <main>
+            <section>
+                <h2>Welcome to GiggleGallery!</h2>
+                <p>This unique digital friendship book is crafted by Tamira Leber and Laurin Scheuber to capture and celebrate your social connections in a fun, interactive way. Dive into a platform where each user creates their personal page filled with not just basic info but engaging, humorous categories that define their personality and preferences.</p>
+            </section>
 
-    <section>
-      <h2>Installation and run instructions</h2>
-      <p>TODO: Add your instructions here if they do not follow the default</p>
-      <div>
-        <h3>Run application</h3>
-        <pre><code>./gradlew bootRun</code></pre>
-      </div>
-      <div>
-        <h3>Run tests</h3>
-        <pre><code>./gradlew test</code></pre>
-      </div>
-    </section>
-  </main>
+            <section>
+                <h2>Team Members</h2>
+                <ul>
+                    <li>Tamira Leber</li>
+                    <li>Laurin Scheuber</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>How It Works</h2>
+                <ol>
+                    <li><strong>Register and Login:</strong> Sign up to create your secure profile.</li>
+                    <li><strong>Customize Your Page:</strong> Add details like your name, a profile picture, and bio. Spice up your page with categories like your Guilty Pleasure Playlist, Binge-Watching Confessions, Time Travel Destinations, and Superhero Nicknames.</li>
+                    <li><strong>Make Connections:</strong> Send and accept friend requests to see others' pages in your GiggleGallery.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Personalized User Profiles</li>
+                    <li>Interactive Friend Requests</li>
+                    <li>Diverse Categories</li>
+                    <li>Giphy Integration</li>
+                    <li>Secure and Simple Login</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Installation and Usage</h2>
+                <p><strong>Setup Instructions:</strong></p>
+                <ul>
+                    <li><strong>Installation:</strong> Clone our repo and navigate to the project directory. Install with <code>./gradlew bootRun</code>.</li>
+                    <li><strong>Running Tests:</strong> Ensure everything is functioning with <code>./gradlew test</code>.</li>
+                </ul>
+                <p><strong>Daily Use:</strong> Simply log in, explore the dashboard, and enjoy interacting with your friends' unique pages.</p>
+            </section>
+
+            <section>
+                <h2>Join Us</h2>
+                <p>Embark on a journey with GiggleGallery where friendships flourish in a playful and creative setting. Start your own page today and bring your friendships to life!</p>
+            </section>
+        </main>
 {% endblock %}
