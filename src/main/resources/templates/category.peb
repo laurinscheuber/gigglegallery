@@ -3,31 +3,15 @@
         {% block title %}Kategorien{% endblock %}
 
     {% block content %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Kategorien</h1>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Optionen</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-{#                            {% for category in categories %}#}
-{#                                <tr>#}
-{#                                    <td>{{ category.id }}</td>#}
-{#                                    <td>{{ category.name }}</td>#}
-{#                                    <td>#}
-{#                                        <a href="{{ urlFor('category_edit', {'id': category.id}) }}" class="btn btn-primary">Bearbeiten</a>#}
-{#                                        <a href="{{ urlFor('category_delete', {'id': category.id}) }}" class="btn btn-danger">Löschen</a>#}
-{#                                    </td>#}
-{#                                </tr>#}
-{#                            {% endfor %}#}
-                        </tbody>
-                </div>
+    <div class="category-list">
+        {% for category in categories %}
+            <div class="category-list__item">
+                <a href="{{ href('/category/' ~ category.id) }}">{{ category.name }}</a>
             </div>
+        {% endfor %}
+    </div>
 
-    {% endblock %}
+    <div class="category-add-button">
+        <a class="button" href="{{ href('/category/add') }}">Add new Category</a>
+    </div>
+{% endblock %}
