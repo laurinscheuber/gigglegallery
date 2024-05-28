@@ -13,8 +13,6 @@ import java.util.List;
 public class IndexController {
     @RequestMapping(path = "/")
     public String index(Model model) {
-        model.addAttribute("title", "Giggle Gallery");
-        List<String> items = Arrays.asList("Item 1", "Item 2", "Item 3");
         return "index";
     }
 }
