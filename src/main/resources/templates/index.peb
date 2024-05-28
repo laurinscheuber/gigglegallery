@@ -55,7 +55,6 @@
                             </div>
                             <!-- Add more friend entries as needed -->
                         </div>
-                        <button class="add-friend-button">Add Friend</button>
                     </div>
                 </div>
                 <div class="modal">
