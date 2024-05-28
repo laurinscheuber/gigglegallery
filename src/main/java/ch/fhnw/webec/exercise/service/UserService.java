@@ -60,7 +60,7 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
     }
 
-    @GetMapping("/api/users")
+    @GetMapping("/")
     public List<Users> getAllUsers() {
         return userRepository.findAll();
     }

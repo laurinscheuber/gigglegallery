@@ -20,15 +20,4 @@ public class GiphyService {
                 .toUriString();
         return restTemplate.getForObject(url, Map.class);
     }
-
-    public Map<String, Object> getTrendingGifs(int limit){
-        String url = UriComponentsBuilder.fromHttpUrl(baseUrl + "/trending")
-                .queryParam("api_key", apiKey)
-                .queryParam("limit",limit)
-                .toUriString();
-        return restTemplate.getForObject(url, Map.class);
-    }
-
-
-
 }
