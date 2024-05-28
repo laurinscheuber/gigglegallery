@@ -48,16 +48,4 @@ public class GiphyController {
             return ResponseEntity.status(500).body((Map) errorResponse);
         }
     }
-
-
-    @GetMapping("/trending_gifs")
-    public ResponseEntity<Map<String, Object>> getTrendingGifs(@RequestParam(defaultValue = "10") int limit) {
-        try {
-            Map<String, Object> response = giphyService.getTrendingGifs(limit);
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            Map<String, String> errorResponse = Map.of("error", e.getMessage());
-            return ResponseEntity.status(500).body((Map) errorResponse);
-        }
-    }
 }
