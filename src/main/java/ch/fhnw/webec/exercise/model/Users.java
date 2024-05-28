@@ -42,6 +42,18 @@ public class Users implements UserDetails {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> authorities;
 
+    public Users(String username, String password, Set<String> authorities, String guiltyPleasurePlaylist, String bingeWatchingBeichte, String zeitreiseZiel, String superheldenSpitzname, String favoriteGIF) {
+        this.username = username;
+        this.password = password;
+        this.authorities = authorities;
+        this.guiltyPleasurePlaylist = guiltyPleasurePlaylist;
+        this.bingeWatchingBeichte = bingeWatchingBeichte;
+        this.zeitreiseZiel = zeitreiseZiel;
+        this.superheldenSpitzname = superheldenSpitzname;
+        this.favoriteGIF = favoriteGIF;
+
+    }
+
     public Users(String username, String password, Set<String> authorities) {
         this.username = username;
         this.password = password;

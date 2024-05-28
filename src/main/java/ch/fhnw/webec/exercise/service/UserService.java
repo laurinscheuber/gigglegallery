@@ -24,8 +24,8 @@ public class UserService implements UserDetailsService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void addUser(String username, String password, Set<String> authorities) {
-        this.userRepository.save(new Users(username, this.passwordEncoder.encode(password), authorities));
+    public void addUser(String username, String password, Set<String> authorities, String guiltyPleasurePlaylist, String bingeWatchingBeichte, String zeitreiseZiel, String superheldenSpitzname, String favoriteGIF) {
+        this.userRepository.save(new Users(username, this.passwordEncoder.encode(password), authorities, guiltyPleasurePlaylist, bingeWatchingBeichte, zeitreiseZiel, superheldenSpitzname, favoriteGIF));
     }
 
     public boolean usernameAlreadyExists(String username) {
