@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.Set;
 
 
 @Service
+@Transactional
 public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -25,7 +27,8 @@ public class UserService implements UserDetailsService {
     }
 
     public void addUser(String username, String password, Set<String> authorities, String guiltyPleasurePlaylist, String bingeWatchingBeichte, String zeitreiseZiel, String superheldenSpitzname, String favoriteGIF) {
-        this.userRepository.save(new Users(username, this.passwordEncoder.encode(password), authorities, guiltyPleasurePlaylist, bingeWatchingBeichte, zeitreiseZiel, superheldenSpitzname, favoriteGIF));
+        Users user = new Users(username, this.passwordEncoder.encode(password), authorities, guiltyPleasurePlaylist, bingeWatchingBeichte, zeitreiseZiel, superheldenSpitzname, favoriteGIF);
+        this.userRepository.save(user);
     }
 
     public boolean usernameAlreadyExists(String username) {

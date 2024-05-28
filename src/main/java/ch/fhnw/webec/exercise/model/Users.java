@@ -60,7 +60,7 @@ public class Users implements UserDetails {
         this.authorities = authorities;
     }
 
-    protected Users() {
+    public Users() {
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -144,5 +144,17 @@ public class Users implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public List<Friendship> getFriendshipList() {
+        return friendshipList;
     }
 }

@@ -1,17 +1,14 @@
 package ch.fhnw.webec.exercise.controller;
-
-
 import ch.fhnw.webec.exercise.model.Users;
 import ch.fhnw.webec.exercise.service.UserService;
 import org.springframework.security.core.Authentication;
-
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
+
 import java.util.Optional;
 import java.util.Set;
 
@@ -34,24 +31,32 @@ public class LoginController {
         }
     }
 
-    @GetMapping( "/registration")
-    public String register() {
+    @GetMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("user", new Users());
         return "login/registration";
     }
 
-    @PostMapping( "/registration")
-    public String register(@Valid Users user, BindingResult bindingResult, Model model) {
+    @PostMapping("/register")
+    public String registerUser(@Valid Users user, BindingResult bindingResult, Model model) {
         if (this.userService.usernameAlreadyExists(user.getUsername())) {
             bindingResult.addError(new FieldError("user", "username", "Username already exists"));
         }
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("user", user);
-
             return "login/registration";
         } else {
-            this.userService.addUser(user.getUsername(), user.getPassword(), Set.of("ROLE_USER"), user.getGuiltyPleasurePlaylist(), user.getBingeWatchingBeichte(), user.getZeitreiseZiel(), user.getSuperheldenSpitzname(), user.getFavoriteGIF());
-
+            this.userService.addUser(
+                    user.getUsername(),
+                    user.getPassword(),
+                    Set.of("ROLE_USER"),
+                    user.getGuiltyPleasurePlaylist(),
+                    user.getBingeWatchingBeichte(),
+                    user.getZeitreiseZiel(),
+                    user.getSuperheldenSpitzname(),
+                    user.getFavoriteGIF()
+            );
             return "redirect:/login";
         }
     }

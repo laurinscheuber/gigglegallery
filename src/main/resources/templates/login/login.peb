@@ -24,7 +24,7 @@
             {% endif %}
         </form>
         <div class="registration-request">
-            <p>Don't have an account? <a href="/registration">Register here</a>.</p>
+            <p>Don't have an account? <a href="/register">Register here</a>.</p>
         </div>
     </main>
 </div>

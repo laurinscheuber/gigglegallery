@@ -21,7 +21,7 @@ public class SecurityConfiguration {
             .requestMatchers("/error").permitAll()
             .requestMatchers("/").permitAll()
             .requestMatchers("/about").permitAll()
-            .requestMatchers("/registration").permitAll()
+            .requestMatchers("/register").permitAll()
             .requestMatchers("/category").permitAll()
             .requestMatchers("/user/").permitAll()
             .requestMatchers("/user/{id}").permitAll()
