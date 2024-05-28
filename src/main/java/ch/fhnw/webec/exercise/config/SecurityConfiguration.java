@@ -23,8 +23,8 @@ public class SecurityConfiguration {
             .requestMatchers("/about").permitAll()
             .requestMatchers("/register").permitAll()
             .requestMatchers("/category").permitAll()
-            .requestMatchers("/user/").permitAll()
-            .requestMatchers("/user/{id}").permitAll()
+      /*      .requestMatchers("/user/").permitAll()
+            .requestMatchers("/user/{id}").permitAll()*/
             .anyRequest().authenticated()
         ).formLogin(form -> form
             .loginPage("/login").permitAll()
