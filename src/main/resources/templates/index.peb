@@ -51,7 +51,7 @@
                             <div id="friends-list">
     {% for friend in friends %}
         <div class="friend">
-            <p>{{ friend.username }}</p>
+{#           <p>{{ friend.username }}</p>#}
         </div>
     {% endfor %}
 </div>
