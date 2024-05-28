@@ -25,9 +25,9 @@ public class LoginController {
         if (authentication != null && authentication.isAuthenticated()) {
             return "redirect:/";
         } else {
-            model.addAttribute("hasLoginError", error.isPresent());
+            model.addAttribute("hasLoginError", error.isPresent() && error.get().equals("true"));
 
-            return "login/login";
+            return "/login/login";
         }
     }
 
