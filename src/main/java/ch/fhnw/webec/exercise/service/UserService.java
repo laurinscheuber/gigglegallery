@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Set;
@@ -56,7 +57,7 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
     }
 
-
+    @GetMapping("/api/users")
     public List<Users> getAllUsers() {
         return userRepository.findAll();
     }
