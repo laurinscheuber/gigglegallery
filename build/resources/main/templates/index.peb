@@ -23,7 +23,7 @@
                                     <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="getZeitreiseZiel" type="" #}{{ timeTravelDestination }}Time Travel Destination</p>
                                     <p><strong>Superhelden-Spitzname:</strong> {# @pebvariable name="superheroNickname" type="" #}{{ superheroNickname }}Superhero Nickname</p>
                                     <p><strong>Favorite GIF:</strong></p>
-                                    <img src="{# @pebvariable name="favoriteGif" type="" #}{{ favoriteGif }}" alt="Favorite GIF" class="favorite-gif">
+                                     <img src="{# @pebvariable name="favoriteGif" type="" #}{{ favoriteGIF }}" alt="Favorite GIF" class="gifs-container">
                                 </div>
                             </div>
                             <div class="page friend-page">
@@ -36,13 +36,13 @@
                                     <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}Zeitreise Ziel</p>
                                     <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}Superhero Nickname</p>
                                     <p><strong>Favorite GIF:</strong></p>
-                                    <img src="{{ friendFavoriteGif }}" alt="Friend's Favorite GIF" class="favorite-gif">
-                                </div>
-
+                                   <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="favorite-gif"></div>
                             </div>
+                            <button id="add-gif">Add Favorite GIF</button>
+                            <div id="gifContainer"> </div>
                             <button class="flip-button" id="prev-page">Previous</button>
                             <button class="flip-button" id="next-page">Next</button>
-                            <button id="add-gif">Add Favorite GIF</button>
+
                         </div>
 
                     </div>
@@ -55,7 +55,8 @@
                             </div>
                             <!-- Add more friend entries as needed -->
                         </div>
-                        <button class="add-friend-button">Add Friend</button>
+
+
                     </div>
                 </div>
                 <div class="modal">
