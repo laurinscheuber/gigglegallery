@@ -53,7 +53,10 @@
                             <div class="friend">
                                 <p>{{ friendName }}</p>
                             </div>
-                            <!-- Add more friend entries as needed -->
+                            <a class="button" href="{{  href('/category') }} ">Kategorien verwalten</a>
+                            {%  if request.isUserInRole('ADMIN') %}
+                            <a class="button" href="{{  href('/usermanagement') }} ">Benutzer Administration</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
