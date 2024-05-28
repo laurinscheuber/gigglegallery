@@ -22,8 +22,9 @@ public class SecurityConfiguration {
             .requestMatchers("/").permitAll()
             .requestMatchers("/about").permitAll()
             .requestMatchers("/registration").permitAll()
-            .requestMatchers("/books/*").permitAll()
-            .requestMatchers("/api/**").permitAll() // Permitting for demonstrating purposes only!
+            .requestMatchers("/category").permitAll()
+            .requestMatchers("/user/").permitAll()
+            .requestMatchers("/user/{id}").permitAll()
             .anyRequest().authenticated()
         ).formLogin(form -> form
             .loginPage("/login").permitAll()
