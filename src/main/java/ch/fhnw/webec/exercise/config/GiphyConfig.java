@@ -11,4 +11,8 @@ public class GiphyConfig {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+    public boolean getApiKey() {
+        return true;
+    }
 }
