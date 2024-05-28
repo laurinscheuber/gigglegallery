@@ -1,13 +1,32 @@
 package ch.fhnw.webec.exercise.controller;
 
+import ch.fhnw.webec.exercise.model.Users;
+import ch.fhnw.webec.exercise.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class ProfileController {
-    @RequestMapping(path = "/profile", method = RequestMethod.GET)
-    public String profile() {
+
+    private final UserService userService;
+
+    public ProfileController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping("/profile")
+    public String profile(Model model) {
+        List<Users> users = userService.getAllUsers();
+        model.addAttribute("users", users);
         return "profile";
+    }
+
+    @PostMapping("/profile/delete/{id}")
+    public String deleteUser(@PathVariable("id") Long id) {
+        userService.deleteUser(id);
+        return "redirect:/profile";
     }
 }

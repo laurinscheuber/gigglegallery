@@ -31,11 +31,6 @@ public class CategoryController {
         return "category";
     }
 
-    @GetMapping("/add")
-    public String getAddCategoryForm(Model model) {
-        model.addAttribute("category", new Category());
-        return "category-add";
-    }
 
     @PostMapping("/addCategory")
     public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result, Model model) {
@@ -80,6 +75,37 @@ public class CategoryController {
         return "category";
     }
 
+    @PostMapping("/categories")
+    public String createCategory(@ModelAttribute("categoryForm") Category category, BindingResult result, Model model) {
+        try {
+            if (result.hasErrors()) {
+                // handle validation errors
+                return "categories";
+            }
+            categoryService.saveCategory(category);
+            return "redirect:/categories";
+        } catch (Exception e) {
+            // handle other exceptions
+            model.addAttribute("error", "An error occurred while creating the category: " + e.getMessage());
+            return "categories";
+        }
+    }
 
+    @PostMapping("/categories/{id}")
+    public String updateCategory(@PathVariable("id") String id, @ModelAttribute("categoryForm") Category category, BindingResult result, Model model) {
+        try {
+            if (result.hasErrors()) {
+                // handle validation errors
+                return "categories";
+            }
+            category.setId(id);
+            categoryService.saveCategory(category);
+            return "redirect:/categories";
+        } catch (Exception e) {
+            // handle other exceptions
+            model.addAttribute("error", "An error occurred while updating the category: " + e.getMessage());
+            return "categories";
+        }
+    }
 
 }

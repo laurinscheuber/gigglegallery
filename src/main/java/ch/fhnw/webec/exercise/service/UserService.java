@@ -60,6 +60,11 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
     }
 
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+
     @GetMapping("/")
     public List<Users> getAllUsers() {
         return userRepository.findAll();

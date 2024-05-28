@@ -51,6 +51,10 @@ public class CategoryService {
             });
     }
 
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
+    }
+
 
 
     public void deleteCategory(String id) {

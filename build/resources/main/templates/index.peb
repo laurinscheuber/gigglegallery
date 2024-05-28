@@ -54,7 +54,7 @@
                             </div>
                             <a class="button" href="{{  href('/category') }} ">Kategorien verwalten</a>
                             {%  if request.isUserInRole('ADMIN') %}
-                            <a class="button" href="{{  href('/usermanagement') }} ">Benutzer Administration</a>
+                            <a class="button" href="{{  href('/profile') }} ">Benutzer Administration</a>
                             {% endif %}
                         </div>
                         <button id="add-gif">Add Friend</button>

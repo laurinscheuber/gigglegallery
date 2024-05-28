@@ -5,24 +5,27 @@
         {% import "form/csrf" %}
         {% import "form/submit" %}
 
-        {% block title %}Kategorien{% endblock %}
+        {% block title %}Categories{% endblock %}
 
     {% block content %}
-    <div class="category-list">
+<div class="category-list">
+    {% for category in categories %}
+        <div class="category-list__item">
+            <a href="{{ href('/category/' ~ category.id) }}">{{ category.name }}</a>
+            <form method="POST" action="{{ href('/category/delete/' ~ category.id) }}">
+                <input type="hidden" name="_csrf" value="{{ _csrf.token }}"/>
+                <button type="submit" class="delete-link">X</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
 
-
-        {% for category in categories %}
-            <div class="category-list__item">
-               <a href="{{ href('/category/' ~ category.id) }}">{{ category.name }}</a>
-                <form method="POST" action="{{ href('/category/delete/' ~ category.id) }}">
-    <input type="hidden" name="_csrf" value="{{ _csrf.token }}"/>
-    <button type="submit" class="delete-link">X</button>
-</form>
-            </div>
-        {% endfor %}
-    </div>
-
-    <div class="category-add-button">
-        <a class="button" href="{{ href('/category/add') }}">Add new Category</a>
-    </div>
+<!-- Form for adding a new category or editing an existing one -->
+<div class="category-form">
+    <form method="POST" action="{{ categoryForm.id ? href('/category/' ~ categoryForm.id) : href('/category') }}">
+        <input type="hidden" name="_csrf" value="{{ _csrf.token }}"/>
+        <input type="text" name="name" value="{{ categoryForm.name }}" placeholder="Category Name"/>
+        <button type="submit">{{ categoryForm.id ? 'Update' : 'Add' }} Category</button>
+    </form>
+</div>
 {% endblock %}

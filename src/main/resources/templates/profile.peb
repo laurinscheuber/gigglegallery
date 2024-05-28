@@ -6,11 +6,15 @@
         {% import "form/submit" %}
 
     {% block content %}
-    <form method="post" class="form">
-        {{ input("book", "Title", "title", "text", book.title, _context) }}
-    {{ input("book", "Description", "description", "textarea", book.description, _context) }}
-    {{ select("book", "Topics", "topics", topics, book.topics, true, _context) }}
-    {{ csrf(_csrf) }}
-    {{ submit("Save") }}
-    </form>
+<div class="user-list">
+    {% for user in users %}
+        <div class="user-list__item">
+            <p>{{ user.username }}</p>
+            <form method="POST" action="{{ href('/profile/delete/' ~ user.id) }}">
+                <input type="hidden" name="_csrf" value="{{ _csrf.token }}"/>
+                <button type="submit" class="delete-link">Delete</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
