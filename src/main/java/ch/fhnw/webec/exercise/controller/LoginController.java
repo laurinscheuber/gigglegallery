@@ -50,7 +50,7 @@ public class LoginController {
 
             return "login/registration";
         } else {
-            this.userService.addUser(user.getUsername(), user.getPassword(), Set.of("ROLE_USER"));
+            this.userService.addUser(user.getUsername(), user.getPassword(), Set.of("ROLE_USER"), user.getGuiltyPleasurePlaylist(), user.getBingeWatchingBeichte(), user.getZeitreiseZiel(), user.getSuperheldenSpitzname(), user.getFavoriteGIF());
 
             return "redirect:/login";
         }
