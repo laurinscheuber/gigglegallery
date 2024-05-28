@@ -444,3 +444,18 @@ input[type="text"], input[type="password"], select, textarea {
 .close-button:hover {
     color: #f00; /* Red color on hover for attention */
 }
+/** Topic List */
+.topic-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.topic-list__item {
+    display: inline-block;
+    background: #007BFF;
+    color: #007BFF;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 1;
+}
