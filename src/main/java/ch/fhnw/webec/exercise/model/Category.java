@@ -12,7 +12,7 @@ import java.util.List;
 @Table (name = "CATEGORY")
 public class Category implements SelectOption {
     @Id
-    private int id;
+    private Long id;
 
     @OneToMany
     private List<Friendship> friendshipList;
@@ -27,7 +27,7 @@ public class Category implements SelectOption {
 
     private String name;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
