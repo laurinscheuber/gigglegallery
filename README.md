@@ -29,16 +29,7 @@
 
 ## Installation and run instructions
 
-TODO: Add your instructions here if they do not follow the default
+1. Clone repository
+2. Run application
+3. Connect to `http://localhost:8080`
 
-### Run application
-
-```
-./gradlew bootRun
-```
-
-### Run tests
-
-```
-./gradlew test
-```
