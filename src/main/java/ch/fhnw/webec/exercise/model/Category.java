@@ -54,4 +54,8 @@ public class Category implements SelectOption {
     public String getLabel() {
         return null;
     }
+
+    public void setId(String id) {
+
+    }
 }
