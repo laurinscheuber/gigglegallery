@@ -3,53 +3,34 @@
         {% block title %}About{% endblock %}
 
     {% block content %}
-   <main>
-            <section>
-                <h2>Welcome to GiggleGallery!</h2>
-                <p>This unique digital friendship book is crafted by Tamira Leber and Laurin Scheuber to capture and celebrate your social connections in a fun, interactive way. Dive into a platform where each user creates their personal page filled with not just basic info but engaging, humorous categories that define their personality and preferences.</p>
-            </section>
+        <div class="content">
+        <h1>Welcome to GiggleGallery!</h1>
+        <p>Welcome to GiggleGallery, the ultimate destination for all your GIF needs! Whether you're looking to brighten up your day or share a laugh with friends, GiggleGallery has got you covered. Our platform lets you search interactively for the funniest GIFs on the internet and display them seamlessly on your profile. Get ready to giggle, chuckle, and LOL with your best friends, because at GiggleGallery, the fun never stops!</p>
 
-            <section>
-                <h2>Team Members</h2>
-                <ul>
-                    <li>Tamira Leber</li>
-                    <li>Laurin Scheuber</li>
-                </ul>
-            </section>
+        <h2>Team Members</h2>
+        <p>GiggleGallery is brought to you by Tamira Leber and Laurin Scheuber. They're not programmers by trade, but they've had a blast learning all the ins and outs of coding during this project. From endless debugging sessions to those infamous night shifts right before submission, they've enjoyed every moment of this journey. Their laughter-filled adventure has resulted in a platform that's sure to bring smiles to your faces too!</p>
 
-            <section>
-                <h2>How It Works</h2>
-                <ol>
-                    <li><strong>Register and Login:</strong> Sign up to create your secure profile.</li>
-                    <li><strong>Customize Your Page:</strong> Add details like your name, a profile picture, and bio. Spice up your page with categories like your Guilty Pleasure Playlist, Binge-Watching Confessions, Time Travel Destinations, and Superhero Nicknames.</li>
-                    <li><strong>Make Connections:</strong> Send and accept friend requests to see others' pages in your GiggleGallery.</li>
-                </ol>
-            </section>
+        <h2>How It Works</h2>
+        <p>Using GiggleGallery is as simple as 1-2-3. Just search for your favorite GIFs using our interactive search feature, and watch as they magically appear on your profile. Want to make friends? Forget about sending and accepting friend requests—just one click, and you're instantly connected! See the hilarious bios and favorite GIFs of your best buddies without any hassle. GiggleGallery makes sharing laughs easier than ever.</p>
 
-            <section>
-                <h2>Key Features</h2>
-                <ul>
-                    <li>Personalized User Profiles</li>
-                    <li>Interactive Friend Requests</li>
-                    <li>Diverse Categories</li>
-                    <li>Giphy Integration</li>
-                    <li>Secure and Simple Login</li>
-                </ul>
-            </section>
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Interactive GIF Search:</strong> Find and display the funniest GIFs on your profile with ease.</li>
+            <li><strong>Instant Friendship:</strong> Become friends with just one click and access your friends' funny info instantly.</li>
+            <li><strong>Seamless Integration:</strong> Enjoy a smooth and enjoyable user experience across all devices.</li>
+            <li><strong>Engaging User Profiles:</strong> Personalize your profile with your favorite GIFs and see what makes your friends laugh.</li>
+        </ul>
 
-            <section>
-                <h2>Installation and Usage</h2>
-                <p><strong>Setup Instructions:</strong></p>
-                <ul>
-                    <li><strong>Installation:</strong> Clone our repo and navigate to the project directory. Install with <code>./gradlew bootRun</code>.</li>
-                    <li><strong>Running Tests:</strong> Ensure everything is functioning with <code>./gradlew test</code>.</li>
-                </ul>
-                <p><strong>Daily Use:</strong> Simply log in, explore the dashboard, and enjoy interacting with your friends' unique pages.</p>
-            </section>
+        <h2>Installation and Usage</h2>
+        <p>Getting started with GiggleGallery is a breeze! Just follow these simple steps:</p>
+        <ol>
+            <li><strong>Clone the Repository:</strong> Clone the GitLab repository into your favorite IDE.</li>
+            <li><strong>Run the Application:</strong> Start the application from your IDE.</li>
+            <li><strong>Connect to Localhost:</strong> Open your favorite browser and go to <a href="http://localhost:8080">localhost:8080</a> to start giggling!</li>
+        </ol>
 
-            <section>
-                <h2>Join Us</h2>
-                <p>Embark on a journey with GiggleGallery where friendships flourish in a playful and creative setting. Start your own page today and bring your friendships to life!</p>
-            </section>
-        </main>
+        <h2>Join Us</h2>
+        <p>Ready to dive into a world of endless fun? Join GiggleGallery today and become part of a community that values humor and connection. We can't wait to see what makes you laugh!</p>
+    </div>
+
 {% endblock %}
