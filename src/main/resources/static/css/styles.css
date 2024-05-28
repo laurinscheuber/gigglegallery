@@ -104,6 +104,23 @@ label {
     font-weight: bold;
 }
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
 input[type="text"],
 input[type="password"] {
     width: calc(100% - 22px);  /* Account for padding and border */
