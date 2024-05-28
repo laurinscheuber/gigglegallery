@@ -1,4 +1,4 @@
-package service;
+package ch.fhnw.webec.exercise.service;
 
 import ch.fhnw.webec.exercise.service.GiphyService;
 import org.junit.jupiter.api.Test;

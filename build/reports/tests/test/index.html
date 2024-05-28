@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">13</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">10</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.021s</div>
+<div class="counter">1.124s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">23%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,13 +58,61 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Packages</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Classes</a>
+<a href="#tab1">Packages</a>
+</li>
+<li>
+<a href="#tab2">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/ch.fhnw.webec.exercise.controller.CategoryControllerIntegrationTest.html">CategoryControllerIntegrationTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.controller.CategoryControllerIntegrationTest.html#testAddCategory()">testAddCategory()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.controller.UserControllerIntegrationTest.html">UserControllerIntegrationTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.controller.UserControllerIntegrationTest.html#testAddUser()">testAddUser()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.e2e.DeleteCategoryE2ETest.html">DeleteCategoryE2ETest</a>.
+<a href="classes/ch.fhnw.webec.exercise.e2e.DeleteCategoryE2ETest.html#testDeleteCategory()">testDeleteCategory()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.e2e.EditFriendshipE2ETest.html">EditFriendshipE2ETest</a>.
+<a href="classes/ch.fhnw.webec.exercise.e2e.EditFriendshipE2ETest.html#testEditFriendship()">testEditFriendship()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.e2e.UserRegistrationLoginE2ETest.html">UserRegistrationLoginE2ETest</a>.
+<a href="classes/ch.fhnw.webec.exercise.e2e.UserRegistrationLoginE2ETest.html#testUserRegistrationAndLogin()">testUserRegistrationAndLogin()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.repository.CategoryRepositoryIntegrationTest.html">CategoryRepositoryIntegrationTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.repository.CategoryRepositoryIntegrationTest.html#testFindCategoryByName()">testFindCategoryByName()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.repository.CategoryRepositoryTest.html">CategoryRepositoryTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.repository.CategoryRepositoryTest.html#testFindCategoryByName()">testFindCategoryByName()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.repository.FriendshipRepositoryTest.html">FriendshipRepositoryTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.repository.FriendshipRepositoryTest.html#testFindByUserId()">testFindByUserId()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.repository.UserRepositoryIntegrationTest.html">UserRepositoryIntegrationTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.repository.UserRepositoryIntegrationTest.html#testFindByUsername()">testFindByUsername()</a>
+</li>
+<li>
+<a href="classes/ch.fhnw.webec.exercise.repository.UserRepositoryTest.html">UserRepositoryTest</a>.
+<a href="classes/ch.fhnw.webec.exercise.repository.UserRepositoryTest.html#testFindByUsername()">testFindByUsername()</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -85,13 +133,53 @@
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.021s</td>
+<td>0.057s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/ch.fhnw.webec.exercise.controller.html">ch.fhnw.webec.exercise.controller</a>
+</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0.751s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/ch.fhnw.webec.exercise.e2e.html">ch.fhnw.webec.exercise.e2e</a>
+</td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>0.086s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/ch.fhnw.webec.exercise.repository.html">ch.fhnw.webec.exercise.repository</a>
+</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0.168s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/ch.fhnw.webec.exercise.service.html">ch.fhnw.webec.exercise.service</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.062s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -112,7 +200,127 @@
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.021s</td>
+<td>0.057s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.controller.CategoryControllerIntegrationTest.html">ch.fhnw.webec.exercise.controller.CategoryControllerIntegrationTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.742s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.controller.UserControllerIntegrationTest.html">ch.fhnw.webec.exercise.controller.UserControllerIntegrationTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.009s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.e2e.DeleteCategoryE2ETest.html">ch.fhnw.webec.exercise.e2e.DeleteCategoryE2ETest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.073s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.e2e.EditFriendshipE2ETest.html">ch.fhnw.webec.exercise.e2e.EditFriendshipE2ETest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.007s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.e2e.UserRegistrationLoginE2ETest.html">ch.fhnw.webec.exercise.e2e.UserRegistrationLoginE2ETest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.006s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.repository.CategoryRepositoryIntegrationTest.html">ch.fhnw.webec.exercise.repository.CategoryRepositoryIntegrationTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.028s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.repository.CategoryRepositoryTest.html">ch.fhnw.webec.exercise.repository.CategoryRepositoryTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.006s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.repository.FriendshipRepositoryTest.html">ch.fhnw.webec.exercise.repository.FriendshipRepositoryTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.061s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.repository.UserRepositoryIntegrationTest.html">ch.fhnw.webec.exercise.repository.UserRepositoryIntegrationTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.062s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ch.fhnw.webec.exercise.repository.UserRepositoryTest.html">ch.fhnw.webec.exercise.repository.UserRepositoryTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.011s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ch.fhnw.webec.exercise.service.GiphyServiceTests.html">ch.fhnw.webec.exercise.service.GiphyServiceTests</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ch.fhnw.webec.exercise.service.UserServiceTest.html">ch.fhnw.webec.exercise.service.UserServiceTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.061s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
@@ -126,7 +334,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 28 May 2024, 17:34:51</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 28.05.2024, 18:02:00</p>
 </div>
 </div>
 </body>

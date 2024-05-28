@@ -1,40 +1,38 @@
-{# @pebvariable name="title" type="java.lang.String" #}
     {% extends "layout/default" %}
 
-    {% block title %}Giggle Gallery{% endblock %}
+        {% block title %}Giggle Gallery{% endblock %}
 
-{% block content %}
+    {% block content %}
 <div id="wrapper">
     <div id="container">
 
         <section class="open-book">
-            <h2 class="chapter-title">"{# @pebvariable name="userName" type="" #}{{ userName }}"</h2>
+            <h2 class="chapter-title">"{{ username }}"</h2>
             <div class="container">
                 <div class="dashboard">
                     <div class="book-section">
                         <div class="book-pages">
                             <div class="page own-page">
                                 <div class="book-header">
-                                    <h2>{# @pebvariable name="friendName" type="" #}{{ friendName }}</h2>
+                                    <h2>{{ username }}</h2>
                                 </div>
                                 <div class="details">
-                                    <p><strong>Guilty Pleasure Playlist:</strong> {# @pebvariable name="guiltyPleasurePlaylist" type="" #}{{ guiltyPleasurePlaylist }}Guilty Pleasure Playlist</p>
-                                    <p><strong>Binge-Watching-Beichte:</strong> {# @pebvariable name="bingeWatchingConfession" type="" #}{{ bingeWatchingConfession }}Binge Watching Confession</p>
-                                    <p><strong>Zeitreise-Ziel:</strong> {# @pebvariable name="getZeitreiseZiel" type="" #}{{ timeTravelDestination }}Time Travel Destination</p>
-                                    <p><strong>Superhelden-Spitzname:</strong> {# @pebvariable name="superheroNickname" type="" #}{{ superheroNickname }}Superhero Nickname</p>
-                                    <p><strong>Favorite GIF:</strong></p>
-                                     <img src="{# @pebvariable name="favoriteGif" type="" #}{{ favoriteGIF }}" alt="Favorite GIF" class="gifs-container">
+                                    <div><p><strong>Guilty Pleasure Playlist:</strong> {{  guiltyPleasurePlaylist }}</p></div>
+                                    <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}</p>
+                                    <p><strong>Zeitreise-Ziel:</strong> {{ zeitreiseZiel }}</p>
+                                    <p><strong>Superhelden-Spitzname:</strong> {{ superheldenSpitzname }}</p>
+                                     <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="gifs-container">
                                 </div>
                             </div>
                             <div class="page friend-page">
                                 <div class="-book-header">
-                                    <h2>{{ friendName }}</h2>
+                                    <h2>{{ username }}</h2>
                                 </div>
                                 <div class="details">
-                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ friendGuiltyPleasurePlaylist }}Guilty Pleasure</p>
-                                    <p><strong>Binge-Watching-Beichte:</strong> {{ friendBingeWatchingConfession }}Binge Watch Beichte</p>
-                                    <p><strong>Zeitreise-Ziel:</strong> {{ friendTimeTravelDestination }}Zeitreise Ziel</p>
-                                    <p><strong>Superhelden-Spitzname:</strong> {{ friendSuperheroNickname }}Superhero Nickname</p>
+                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}Guilty Pleasure</p>
+                                    <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}Binge Watch Beichte</p>
+                                    <p><strong>Zeitreise-Ziel:</strong> {{ zeitreiseZiel }}Zeitreise Ziel</p>
+                                    <p><strong>Superhelden-Spitzname:</strong> {{ superheldenSpitzname }}Superhero Nickname</p>
                                     <p><strong>Favorite GIF:</strong></p>
                                    <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="favorite-gif"></div>
                             </div>
@@ -52,7 +50,7 @@
                         <div id="friends-list">
                             <!-- Example friend entry -->
                             <div class="friend">
-                                <p>{{ friendName }}</p>
+                                <p>{{ friend.username }}</p>
                             </div>
                             <a class="button" href="{{  href('/category') }} ">Kategorien verwalten</a>
                             {%  if request.isUserInRole('ADMIN') %}

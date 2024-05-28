@@ -39,13 +39,12 @@ public class UserController {
         //Booklist add Bookreview
         user.getFriendshipList();
         List<Users> friends = user.getFriendshipList().stream().map(Friendship::getFriend).collect(Collectors.toList());
-        model.addAttribute("title", "Giggle Gallery");
         model.addAttribute("username", user.getUsername());
         model.addAttribute("guiltyPleasurePlaylist", user.getGuiltyPleasurePlaylist());
-        model.addAttribute("bingeWatchingConfession", user.getBingeWatchingBeichte());
-        model.addAttribute("timeTravelDestination", user.getZeitreiseZiel());
-        model.addAttribute("superheroNickname", user.getSuperheldenSpitzname());
-        model.addAttribute("favoriteGif", user.getFavoriteGIF());
+        model.addAttribute("bingeWatchingBeichte", user.getBingeWatchingBeichte());
+        model.addAttribute("zeitreiseZiel", user.getZeitreiseZiel());
+        model.addAttribute("superheldenSpitzname", user.getSuperheldenSpitzname());
+        model.addAttribute("favoriteGIF", user.getFavoriteGIF());
         return "index";
     }
 }
