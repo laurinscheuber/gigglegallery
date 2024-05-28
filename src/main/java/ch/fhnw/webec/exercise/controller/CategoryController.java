@@ -1,26 +1,33 @@
 package ch.fhnw.webec.exercise.controller;
 
 import ch.fhnw.webec.exercise.model.Category;
-import ch.fhnw.webec.exercise.repository.CategoryRepository;
+import ch.fhnw.webec.exercise.service.CategoryService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
 
-    private final CategoryRepository categoryRepository;
+    private final CategoryService categoryService;
 
-    public CategoryController(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
+    @Autowired
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
     @GetMapping
     public String getAllCategories(Model model) {
-        model.addAttribute("categories", categoryRepository.findAll());
+        List<Category> categories = categoryService.getAllCategories();
+        model.addAttribute("categories", categories);
         return "category";
     }
 
@@ -33,28 +40,36 @@ public class CategoryController {
     @PostMapping("/addCategory")
     public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "categoryForm";
+            return "category-add";
         }
-        // Speichern der Kategorie
-        return "redirect:/categories";
+        categoryService.addCategory(category);
+        return "redirect:/category";
     }
 
     @GetMapping("/{id}")
     public String getEditCategoryForm(@PathVariable String id, Model model) {
-        Category category = categoryRepository.findById(id).orElseThrow();
-        model.addAttribute("category", category);
-        return "category-edit";
+        Optional<Category> category = categoryService.getCategoryById(id);
+        if (category.isPresent()) {
+            model.addAttribute("category", category.get());
+            return "category-edit";
+        } else {
+            model.addAttribute("error", "Category not found");
+            return "redirect:/category";
+        }
     }
 
     @PostMapping("/{id}")
-    public String editCategory(@PathVariable String id, @Valid @ModelAttribute("category") Category category, BindingResult result) {
+    public String editCategory(@PathVariable String id, @Valid @ModelAttribute("category") Category category, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "category-edit";
         }
-        Category existingCategory = categoryRepository.findById(id).orElseThrow();
-        existingCategory.setName(category.getName());
-        categoryRepository.save(existingCategory);
+        categoryService.updateCategory(id, category);
         return "redirect:/category";
     }
 
+    @PostMapping("/delete/{id}")
+    public String deleteCategory(@PathVariable String id) {
+        categoryService.deleteCategory(id);
+        return "redirect:/category";
+    }
 }
