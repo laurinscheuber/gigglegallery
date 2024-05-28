@@ -227,7 +227,7 @@ button[type="submit"] {
     margin-top: 0.5rem;
 }
 
-.flip-button, .add-friend-button, #add-gif, #search-button {
+.flip-button, .add-friend-button, #add-gif, #search-button, #add-friend {
     background: #007bff;
     color: #fff;
     border: none;
@@ -257,7 +257,7 @@ button[type="submit"] {
     border-radius: 5px;
 }
 
-.modal {
+.modal, .modal-friends{
     display: none;
     position: fixed;
     z-index: 1000;

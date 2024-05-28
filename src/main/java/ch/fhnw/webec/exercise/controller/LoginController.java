@@ -57,7 +57,7 @@ public class LoginController {
                     user.getSuperheldenSpitzname(),
                     user.getFavoriteGIF()
             );
-            return "redirect:/login";
+            return "/login";
         }
     }
 }

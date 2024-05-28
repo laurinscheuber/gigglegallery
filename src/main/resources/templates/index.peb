@@ -1,8 +1,8 @@
-    {% extends "layout/default" %}
+{% extends "layout/default" %}
 
-        {% block title %}Giggle Gallery{% endblock %}
+{% block title %}Giggle Gallery{% endblock %}
 
-    {% block content %}
+{% block content %}
 <div id="wrapper">
     <div id="container">
 
@@ -17,11 +17,12 @@
                                     <h2>{{ username }}</h2>
                                 </div>
                                 <div class="details">
-                                    <div><p><strong>Guilty Pleasure Playlist:</strong> {{  guiltyPleasurePlaylist }}</p></div>
+                                    <div><p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}</p>
+                                    </div>
                                     <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}</p>
                                     <p><strong>Zeitreise-Ziel:</strong> {{ zeitreiseZiel }}</p>
                                     <p><strong>Superhelden-Spitzname:</strong> {{ superheldenSpitzname }}</p>
-                                     <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="gifs-container">
+                                    <img src="{{ user.get }}" alt="Favorite GIF" class="gifs-container">
                                 </div>
                             </div>
                             <div class="page friend-page">
@@ -29,21 +30,22 @@
                                     <h2>{{ username }}</h2>
                                 </div>
                                 <div class="details">
-                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}Guilty Pleasure</p>
-                                    <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}Binge Watch Beichte</p>
+                                    <p><strong>Guilty Pleasure Playlist:</strong> {{ guiltyPleasurePlaylist }}Guilty
+                                        Pleasure</p>
+                                    <p><strong>Binge-Watching-Beichte:</strong> {{ bingeWatchingConfession }}Binge Watch
+                                        Beichte</p>
                                     <p><strong>Zeitreise-Ziel:</strong> {{ zeitreiseZiel }}Zeitreise Ziel</p>
-                                    <p><strong>Superhelden-Spitzname:</strong> {{ superheldenSpitzname }}Superhero Nickname</p>
+                                    <p><strong>Superhelden-Spitzname:</strong> {{ superheldenSpitzname }}Superhero
+                                        Nickname</p>
                                     <p><strong>Favorite GIF:</strong></p>
-                                   <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="favorite-gif"></div>
+                                    <img src="{{ favoriteGIF }}" alt="Favorite GIF" class="favorite-gif"></div>
                             </div>
 
-                            <div id="gifContainer"> </div>
+                            <div id="gifContainer"></div>
                             <button id="add-gif">Add Favorite GIF</button>
                             <button class="flip-button" id="prev-page">Previous</button>
                             <button class="flip-button" id="next-page">Next</button>
-
                         </div>
-
                     </div>
                     <div class="friends-section">
                         <h2>Friends</h2>
@@ -56,11 +58,11 @@
     {% endfor %}
 </div>
                             <a class="button" href="{{  href('/category') }} ">Kategorien verwalten</a>
-                            {%  if request.isUserInRole('ADMIN') %}
+                            {% if request.isUserInRole('ADMIN') %}
                             <a class="button" href="{{  href('/profile') }} ">Benutzer Administration</a>
                             {% endif %}
                         </div>
-                        <button id="add-gif">Add Friend</button>
+                        <button id="add-friend-button">Add Friend</button>
                     </div>
                 </div>
                 <div class="modal">
@@ -70,6 +72,19 @@
                         <input type="text" id="query-input" placeholder="Search for GIFs"/>
                         <button id="search-button">Search</button>
                         <div id="gifs-container"></div>
+                    </div>
+                </div>
+                <div class="modal-friends">
+                    <div class="modal-content">
+                        <h2> Friends</h2>
+                        <span class="close-button" id="add-friend-close">&times;</span>
+                        <div id="friends">
+                            <ul>
+                                <li> "Friend1"</li>
+                                <li> "Friend1"</li>
+                                <li> "Friend1"</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
