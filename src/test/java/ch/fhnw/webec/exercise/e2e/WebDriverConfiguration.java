@@ -1,27 +1,18 @@
 package ch.fhnw.webec.exercise.e2e;
 
 import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.test.context.TestConfiguration;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Configuration;
 
-@TestConfiguration
+@Configuration
 public class WebDriverConfiguration {
-    @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    @ConditionalOnClass(name = "org.openqa.selenium.htmlunit.HtmlUnitDriver")
-    public WebDriver getHtmlUnitDriver() throws Exception {
-        return (WebDriver) Class.forName("org.openqa.selenium.htmlunit.HtmlUnitDriver").getConstructor().newInstance();
-    }
 
-    @Primary
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    @ConditionalOnClass(name = "org.openqa.selenium.chrome.ChromeDriver")
-    public WebDriver getChromeDriver() throws Exception {
-        return (WebDriver) Class.forName("org.openqa.selenium.chrome.ChromeDriver").getConstructor().newInstance();
+    public WebDriver chromeDriver() {
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        return new ChromeDriver(options);
     }
 }
