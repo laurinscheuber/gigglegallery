@@ -18,9 +18,6 @@
             <div class="form-group">
                 {{ input("user", "Password", "password", "password", '', _context) }}
             </div>
-            <div class="form-group">
-                {{  input("profilePicture", "Profile Picture", "profilePicture", "profilePicture", user.profilePicutre, _context)}}
-            </div>
                         <div class="form-group">
                 {{  input("bingeWatchingBeichte", "Binge Watch Beichte", "bingeWatchingBeichte", "bingeWatchingBeichte", user.getGuiltyPleasurePlaylist, _context)}}
             </div>
