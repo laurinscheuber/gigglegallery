@@ -157,4 +157,8 @@ public class Users implements UserDetails {
     public List<Friendship> getFriendshipList() {
         return friendshipList;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
