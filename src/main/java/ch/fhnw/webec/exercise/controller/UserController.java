@@ -20,21 +20,4 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-
-    @GetMapping("/index")
-    public String getUserPage(Model model, Authentication authenticator) {
-        authenticator.getPrincipal();
-        var user = this.userRepository.findByUsername(authenticator.getName()).orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED));
-        //Booklist add Bookreview
-        //user.getFriendshipList();
-        List<Users> friends = user.getFriendshipList().stream().map(Friendship::getFriend).collect(Collectors.toList());
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("guiltyPleasurePlaylist", user.getGuiltyPleasurePlaylist());
-        model.addAttribute("bingeWatchingBeichte", user.getBingeWatchingBeichte());
-        model.addAttribute("zeitreiseZiel", user.getZeitreiseZiel());
-        model.addAttribute("superheldenSpitzname", user.getSuperheldenSpitzname());
-        model.addAttribute("favoriteGIF", user.getFavoriteGIF());
-        model.addAttribute("getFriendshipList", friends);
-        return "index";
-    }
 }

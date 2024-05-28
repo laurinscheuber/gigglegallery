@@ -48,10 +48,13 @@
                     <div class="friends-section">
                         <h2>Friends</h2>
                         <div id="friends-list">
-                            <!-- Example friend entry -->
-                            <div class="friend">
-                                <p>{{ friend.username }}</p>
-                            </div>
+                            <div id="friends-list">
+    {% for friend in friends %}
+        <div class="friend">
+            <p>{{ friend.username }}</p>
+        </div>
+    {% endfor %}
+</div>
                             <a class="button" href="{{  href('/category') }} ">Kategorien verwalten</a>
                             {%  if request.isUserInRole('ADMIN') %}
                             <a class="button" href="{{  href('/profile') }} ">Benutzer Administration</a>

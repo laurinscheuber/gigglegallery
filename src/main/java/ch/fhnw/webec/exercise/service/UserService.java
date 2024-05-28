@@ -40,6 +40,19 @@ public class UserService implements UserDetailsService {
         return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Username not found."));
     }
 
+    public Users getCurrentUser() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername();
+        } else {
+            username = principal.toString();
+        }
+
+        return userRepository.findByUsername(username)
+            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    }
+
     public long getUserId() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
@@ -64,6 +77,21 @@ public class UserService implements UserDetailsService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+    public List<Users> getFriendsOfCurrentUser() {
+        // Get the current user
+        Users currentUser = getCurrentUser();
+
+        // Get the IDs of the friends of the current user from the junction table
+        List<Long> friendIds = userRepository.findFriendIdsByUserId(currentUser.getId());
+
+        // Get the Users objects of the friends
+        List<Users> friends = userRepository.findAllById(friendIds);
+
+        return friends;
+    }
+
+
 
     @GetMapping("/")
     public List<Users> getAllUsers() {

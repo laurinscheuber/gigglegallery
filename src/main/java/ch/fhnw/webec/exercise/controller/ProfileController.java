@@ -21,8 +21,14 @@ public class ProfileController {
     public String profile(Model model) {
         List<Users> users = userService.getAllUsers();
         model.addAttribute("users", users);
+
+        // Fetch the friends list of the current user
+        List<Users> friends = userService.getFriendsOfCurrentUser();
+        model.addAttribute("friends", friends);
+
         return "profile";
     }
+
 
     @PostMapping("/profile/delete/{id}")
     public String deleteUser(@PathVariable("id") Long id) {

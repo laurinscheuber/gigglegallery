@@ -67,7 +67,7 @@ public class Users implements UserDetails {
         return this.authorities.stream().map(SimpleGrantedAuthority::new).toList();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
